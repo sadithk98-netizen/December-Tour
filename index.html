@@ -64,7 +64,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            letter-spacing: 0.5px;
         }
 
         .main-wrapper {
@@ -88,41 +87,10 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
         }
 
-        /* 🖼️ সিনেমাটিক হিরো ব্যানার (ব্যাকগ্রাউন্ড ছবি ও অপাসিটি) */
-        .hero-banner-container {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
-            padding: 26px 18px;
+        /* 🖼️ হিরো সেকশন বক্স */
+        .hero-box {
             text-align: center;
-            background: #0d1322;
-        }
-
-        .hero-bg-img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            opacity: 0.25; /* মৃদু অপাসিটি */
-            z-index: 0;
-            filter: contrast(1.1) saturate(1.1);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(9, 13, 22, 0.45) 0%, rgba(9, 13, 22, 0.95) 100%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
+            padding: 24px 18px;
         }
 
         .badge-pill {
@@ -136,16 +104,15 @@
             font-size: 12px;
             font-weight: 700;
             margin-bottom: 12px;
-            backdrop-filter: blur(8px);
         }
 
-        /* ১ লাইনে টাইটেল লক করা */
+        /* ১ লাইনে লক করা পরিষ্কার টাইটেল */
         .hero-title {
             font-size: clamp(15px, 4.4vw, 22px);
             white-space: nowrap;
             font-weight: 800;
             color: #ffffff;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
         }
         .hero-title .highlight {
@@ -154,18 +121,33 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* সুন্দর ও পারফেক্ট অ্যালাইনমেন্ট টেক্সট বক্স */
+        /* 📸 একদম ক্লিয়ার ও ফ্রেশ ছবি ফ্রেম */
+        .photo-container {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 16px;
+            background: #111827;
+        }
+        .clean-tour-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* ছবির নিচে সুন্দর ও পারফেক্ট অ্যালাইনমেন্ট টেক্সট বক্স */
         .hero-sub {
             font-size: 13.5px;
-            color: #e2e8f0;
+            color: #cbd5e1;
             line-height: 1.85;
             text-align: center;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.35);
             padding: 18px 16px;
             border-radius: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            word-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .section-header {
@@ -245,15 +227,16 @@
             border-radius: 16px;
             cursor: pointer;
             transition: all 0.2s ease;
+            user-select: none;
         }
         .select-card:hover {
             background: rgba(255, 255, 255, 0.06);
             border-color: rgba(255, 255, 255, 0.15);
         }
         .select-card.active {
-            background: rgba(99, 102, 241, 0.15) !important;
+            background: rgba(99, 102, 241, 0.18) !important;
             border-color: #6366f1 !important;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3) !important;
         }
         .select-card span {
             font-size: 14.5px;
@@ -281,7 +264,7 @@
         }
         .select-card.active .radio-circle {
             border-color: #6366f1 !important;
-            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.6) !important;
         }
         .select-card.active .circle-dot {
             background: #6366f1 !important;
@@ -515,35 +498,34 @@
     <div class="bg-glow glow-left"></div>
     <div class="bg-glow glow-right"></div>
 
-    <!-- শীর্ষ টিকার (শুধুমাত্র ক্লিন লেখা) -->
+    <!-- শীর্ষ টিকার -->
     <div class="top-ticker">
         🔥 ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬
     </div>
 
     <div class="main-wrapper">
 
-        <!-- 🖼️ সিনেমাটিক হিরো ব্যানার (ব্যাকগ্রাউন্ড ফটো ও অপাসিটি) -->
-        <div class="hero-banner-container">
-            <img src="https://i.postimg.cc/21m2QnYg/image.jpg" class="hero-bg-img" alt="ট্যুরের স্মৃতি" onerror="this.src='cover.jpg'">
-            <div class="hero-overlay"></div>
+        <!-- 🖼️ হিরো সেকশন: টাইটেল -> একদম ফ্রেশ ছবি -> সুন্দর ডেসক্রিপশন -->
+        <div class="glass-card hero-box">
+            <div class="badge-pill">
+                কোনো বাহানা চলবে না
+            </div>
+            
+            <!-- ১ লাইনে লক করা পরিষ্কার টাইটেল -->
+            <h1 class="hero-title">
+                <span class="highlight">বন্ধুরা, এবার হবে শতাব্দীর সেরা পাগল করা ট্যুর</span>
+            </h1>
 
-            <div class="hero-content">
-                <!-- কোনো ওয়ার্নিং আইকন ছাড়া ক্লিন ব্যাজ -->
-                <div class="badge-pill">
-                    কোনো বাহানা চলবে না
-                </div>
-                
-                <!-- ১ লাইনে লক করা পরিষ্কার টাইটেল -->
-                <h1 class="hero-title">
-                    <span class="highlight">বন্ধুরা, এবার হবে শতাব্দীর সেরা পাগল করা ট্যুর</span>
-                </h1>
+            <!-- 📸 আপনাদের পুলের ছবি (কোনো লেখার ওভারলে ছাড়া, একদম ক্লিয়ার) -->
+            <div class="photo-container">
+                <img src="https://i.postimg.cc/21m2QnYg/image.jpg" class="clean-tour-img" alt="ট্যুরের স্মৃতি" onerror="this.src='cover.jpg'">
+            </div>
 
-                <!-- সুন্দরভাবে সাজানো ইমোশনাল লেখা -->
-                <div class="hero-sub">
-                    বন্ধুরা, অনেক তো হলো সংসার সাধন আর দায়িত্বের ঘানি টানা! জীবনের অর্ধেকটা সময় তো পরিবার, ক্যারিয়ার আর সমাজের নিয়ম মানতেই পার হয়ে গেল। বয়স বাড়ছে, ব্যস্ততা বাড়ছে—এবার নিজের জন্য নিজেকে একটু সময় দেওয়ার পালা। সব পিছুটান ভুলে চল সবাই মিলে হারিয়ে যাই , পুরোনো দিনের গান আর আড্ডা।
-                    <br><br>
-                    ক্যালেন্ডারে তোর সুবিধাজনক দিনগুলোতে সিল মার, স্পট বেছে নে আর ট্যুরের দায়িত্ব কাঁধে তুলে নে। দেখা যাক কপাল কার সাথে কথা কয়!
-                </div>
+            <!-- ছবির নিচে সুন্দরভাবে সাজানো ইমোশনাল বর্ণনা -->
+            <div class="hero-sub">
+                বন্ধুরা, অনেক তো হলো সংসার সাধন আর দায়িত্বের ঘানি টানা! জীবনের অর্ধেকটা সময় তো পরিবার, ক্যারিয়ার আর সমাজের নিয়ম মানতেই পার হয়ে গেল। বয়স বাড়ছে, ব্যস্ততা বাড়ছে—এবার নিজের জন্য নিজেকে একটু সময় দেওয়ার পালা। সব পিছুটান ভুলে চল সবাই মিলে হারিয়ে যাই , পুরোনো দিনের গান আর আড্ডা।
+                <br><br>
+                ক্যালেন্ডারে তোর সুবিধাজনক দিনগুলোতে সিল মার, স্পট বেছে নে আর ট্যুরের দায়িত্ব কাঁধে তুলে নে। দেখা যাক কপাল কার সাথে কথা কয়!
             </div>
         </div>
 
@@ -551,10 +533,10 @@
         <div class="glass-card">
             <div class="section-header">
                 <i class="fa-solid fa-calendar-days text-indigo-400"></i>
-                <span>১. ডিসেম্বরের কোন কোন দিন ফ্রি আছিস?</span>
+                <span>১. তুই ডিসেম্বরের কোন কোন দিন ফ্রি আছিস?</span>
             </div>
             <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">
-                সুবিধাজনক তারিখগুলোতে ট্যাপ করে মার্ক কর (এক বা একাধিক দিন সিলেক্ট করা যাবে):
+                তোর সুবিধাজনক তারিখগুলোতে ট্যাপ করে মার্ক কর (এক বা একাধিক দিন সিলেক্ট করা যাবে):
             </p>
 
             <div class="calendar-weekdays">
@@ -602,7 +584,7 @@
             </div>
         </div>
 
-        <!-- 👑 ৩. দায়িত্ব নির্বাচন (১০০% ফাংশনাল বাটন) -->
+        <!-- 👑 ৩. দায়িত্ব নির্বাচন (১০০% কার্যকর বাটন) -->
         <div class="glass-card">
             <div class="section-header">
                 <i class="fa-solid fa-hand-holding-heart text-emerald-400"></i>
@@ -793,7 +775,7 @@
             calendarGrid.appendChild(cell);
         }
 
-        // ২. স্পট সিলেকশন (সরাসরি এলিমেন্ট টার্গেট)
+        // ২. স্পট সিলেকশন
         let chosenPlace = '';
         function selectPlace(element, placeName) {
             chosenPlace = placeName;
@@ -801,7 +783,7 @@
             element.classList.add('active');
         }
 
-        // ৩. দায়িত্ব নির্বাচন (সরাসরি এলিমেন্ট টার্গেট - ১০০% কার্যকর)
+        // ৩. দায়িত্ব নির্বাচন
         let chosenDuty = '';
         function selectDuty(element, dutyName) {
             chosenDuty = dutyName;
@@ -810,7 +792,7 @@
         }
 
         // ৪. ফলাফল ও ভোট হ্যান্ডলার
-        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_v6_fixed')) || [];
+        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_v7_final')) || [];
 
         function renderResults() {
             const allSpots = ['সুন্দরবন 🐅', 'বান্দরবান ⛰️', 'রাঙ্গামাটি 🏞️', 'সেন্টমার্টিন 🌊', 'যেখানে খুশি 📍'];
@@ -901,7 +883,7 @@
                 dates: formattedDates
             });
 
-            localStorage.setItem('bachelor_tour_v6_fixed', JSON.stringify(votersData));
+            localStorage.setItem('bachelor_tour_v7_final', JSON.stringify(votersData));
 
             document.getElementById('ticketName').innerText = name;
             document.getElementById('ticketPlace').innerText = chosenPlace;
@@ -998,7 +980,7 @@
             if (navigator.share) {
                 navigator.share({
                     title: 'ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🔥',
-                    text: 'বন্ধু, ডিসেম্বরের ট্যুরের জন্য তারিখ, স্পট আর দায়িত্ব বেছে নে!',
+                    text: 'বন্ধু, অনেক হলো সংসার সাধন! ডিসেম্বরের ট্যুরের জন্য তারিখ, স্পট আর দায়িত্ব বেছে নে!',
                     url: currentUrl
                 }).catch(() => {});
             } else {
