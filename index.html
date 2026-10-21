@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ - আলটিমেট প্ল্যানার</title>
+    <!-- Tailwind CSS & Google Fonts -->
+    <script src="https://jsdelivr.net"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Confetti & AnimeJS Animation Engine -->
+    <script src="https://jsdelivr.net"></script>
+    
+    <style>
+        body {
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+        }
+        /* Custom Modern Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        /* Glowing effects */
+        .glow-indigo:hover {
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+        }
+        .glow-amber {
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+        }
+        .glow-amber:hover {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.6);
+        }
+        /* Custom Premium Calendar Highlight */
+        .calendar-selected {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important;
+            color: white !important;
+            border-color: transparent !important;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.02);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+        }
+        /* Advanced Spinning Wheel Style */
+        .wheel-box {
+            position: relative;
+            width: 290px;
+            height: 290px;
+        }
+        @media(min-width: 640px) {
+            .wheel-box { width: 340px; height: 340px; }
+        }
+        canvas#wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 8px solid rgba(255, 255, 255, 0.05);
+            transition: transform 4.5s cubic-bezier(0.15, 0.85, 0.15, 1);
+        }
+        .wheel-pointer {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-top: 28px solid #f43f5e;
+            filter: drop-shadow(0 0 10px rgba(244,63,94,0.6));
+            z-index: 20;
+        }
+        .wheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: #1e1b4b;
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-200 flex flex-col items-center antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- 📢 PREMIUM TICKER / NOTICE BANNER -->
+    <div class="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-center py-3 px-4 shadow-xl sticky top-0 z-50 backdrop-blur-md flex items-center justify-center gap-2 border-b border-white/10">
+        <i class="fa-solid fa-fire text-amber-300 animate-bounce text-sm md:text-base"></i>
+        <span class="text-xs md:text-sm font-semibold tracking-wide">
+            BACHELOR TOUR 2026: নিজের ফ্রি ডেট ও পছন্দের স্পটে ভোট দাও! সিদ্ধান্ত হবে লাইভ লটারিতে! 🔥
+        </span>
+    </div>
+
+    <!-- MAIN INTERFACE CONTAINER -->
+    <div class="max-w-md w-full px-4 py-8 space-y-6 mb-16">
+        
+        <!-- LUXURIOUS LOGO / HEADER CARD -->
+        <div class="glass-card p-6 rounded-3xl flex items-center gap-4 transition-all duration-300 hover:border-white/15 relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="bg-gradient-to-tr from-indigo-500 to-purple-600 text-white p-4 rounded-2xl shadow-lg shadow-indigo-500/30 transform group-hover:rotate-12 transition-transform duration-300">
+                <i class="fa-solid fa-campground text-2xl"></i>
+            </div>
+            <div>
+                <h1 class="text-2xl font-bold text-white tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-200 bg-clip-text">ব্যাচেলর ট্যুর ২০২৬</h1>
+                <p class="text-xs font-semibold tracking-widest text-indigo-400 uppercase mt-0.5">Ultimate Group Decision Hub</p>
+            </div>
+        </div>
+
+        <!-- 📅 INTERACTIVE CALENDAR SECTION -->
+        <div class="glass-card p-6 rounded-3xl space-y-4 transition-all duration-300 hover:border-white/15">
+            <div class="flex items-center justify-between border-b border-white/5 pb-3">
+                <h2 class="text-sm md:text-base font-bold text-white flex items-center gap-2">
+                    <i class="fa-regular fa-calendar-check text-indigo-400"></i> ডিসেম্বরের সম্ভাব্য ডেট বেছে নাও
+                </h2>
+                <span class="text-[11px] bg-indigo-500/10 text-indigo-300 font-bold px-2.5 py-1 rounded-full border border-indigo-500/20 uppercase tracking-wider">Dec 2026</span>
+            </div>
+            
+            <p class="text-xs text-slate-400 leading-relaxed">তুমি যে দিনগুলোতে ফ্রি আছো বা ট্যুর করতে চাও, ক্যালেন্ডারের সেই তারিখগুলো টাচ করো:</p>
+            
+            <!-- Calendar Grid Structure -->
+            <div class="bg-black/20 p-4 rounded-2xl border border-white/5">
+                <div class="grid grid-cols-7 gap-1 text-center text-[11px] font-bold text-slate-500 mb-3 uppercase tracking-wider">
+                    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                </div>
+                <!-- Dec 2026 starts on a Tuesday (Offset: 2 blocks empty) -->
+                <div class="grid grid-cols-7 gap-1.5 text-center" id="calendarGrid">
+                    <div class="py-2.5"></div>
+                    <div class="py-2.5"></div>
+                </div>
+            </div>
+            
+            <!-- Selected days dynamic alert badge -->
+            <div class="bg-white/5 px-4 py-3 rounded-xl border border-white/5 flex justify-between items-center text-xs">
+                <span class="text-slate-400">তোমার সিলেক্ট করা সর্বমোট দিন:</span>
+                <span id="selectedDaysCount" class="font-bold text-white bg-indigo-600 px-3 py-1 rounded-lg shadow-md transition-all duration-300">০ দিন</span>
+            </div>
+        </div>
+
+        <!-- 🗳️ PREMIUM POLL & DISCUSSION SECTION -->
+        <div class="glass-card p-6 rounded-3xl space-y-5 transition-all duration-300 hover:border-white/15">
+            <h2 class="text-sm md:text-base font-bold text-white flex items-center gap-2 border-b border-white/5 pb-3">
+                <i class="fa-solid fa-square-poll-vertical text-purple-400"></i> পছন্দের ট্রাভেল স্পটে ভোট দাও
+            </h2>
+
+            <!-- Animated Add Custom Option Box -->
+            <div class="flex gap-2">
+                <input type="text" id="newPlaceInput" placeholder="যেখানে ইচ্ছা / নতুন কোনো আকর্ষণীয় স্পট..." class="flex-1 bg-black/20 text-white placeholder-slate-500 px-4 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-xs transition-all">
+                <button onclick="addCustomPlace()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 shadow-md shadow-indigo-600/20 cursor-pointer glow-indigo">
+                    <i class="fa-solid fa-plus mr-1"></i> অ্যাড করো
+                </button>
+            </div>
+
+            <!-- Injected Dynamic Poll Options List -->
+            <div id="voteList" class="space-y-3 pt-1">
+                <!-- Dynamically Populated with stunning hover styles -->
+            </div>
+
+            <!-- Live Chat / Thread Comments Board -->
+            <div class="border-t border-white/5 pt-4 mt-2 space-y-3">
+                <h3 class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                    <i class="fa-regular fa-comments text-purple-400"></i> গ্রুপ লাইভ ডিসকাশন বোর্ড:
+                </h3>
+                
+                <div class="flex gap-2">
+                    <input type="text" id="commentInput" placeholder="গ্রুপে তোমার মতামত শেয়ার করো..." class="flex-1 bg-black/20 text-white placeholder-slate-500 px-4 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-purple-500 text-xs transition-all">
+                    <button onclick="postComment()" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 cursor-pointer">
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </button>
