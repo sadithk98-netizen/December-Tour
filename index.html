@@ -1,1025 +1,325 @@
 <!DOCTYPE html>
 <html lang="bn" class="notranslate">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google" content="notranslate">
-    <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🔥</title>
-    
-    <!-- ফন্ট ও আইকন -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- কনফেটি স্ক্রিপ্ট -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            background: #090d16;
-            color: #f1f5f9;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-            position: relative;
-            padding-bottom: 80px;
-        }
-
-        /* 🌌 ব্যাকগ্রাউন্ড অরবস */
-        .bg-glow {
-            position: fixed;
-            width: 360px;
-            height: 360px;
-            border-radius: 50%;
-            filter: blur(120px);
-            z-index: -1;
-            pointer-events: none;
-            opacity: 0.22;
-        }
-        .glow-left { background: #4f46e5; top: -60px; left: -80px; }
-        .glow-right { background: #ec4899; bottom: 120px; right: -80px; }
-
-        /* 📢 একদম ফ্রেশ টপ বার */
-        .top-ticker {
-            width: 100%;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: center;
-            padding: 12px 16px;
-            font-size: 14px;
-            font-weight: 700;
-            color: #fbbf24;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .main-wrapper {
-            width: 100%;
-            max-width: 480px;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-        }
-
-        /* 💎 ফ্রস্টেড গ্লাস কার্ড */
-        .glass-card {
-            background: rgba(22, 29, 47, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.16);
-            border-radius: 24px;
-            padding: 22px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
-        }
-
-        /* 🖼️ হিরো সেকশন বক্স */
-        .hero-box {
-            text-align: center;
-            padding: 24px 18px;
-        }
-
-        .badge-pill {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(239, 68, 68, 0.2);
-            border: 1px solid rgba(239, 68, 68, 0.5);
-            color: #fca5a5;
-            padding: 5px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        /* ১ লাইনে লক করা পরিষ্কার টাইটেল */
-        .hero-title {
-            font-size: clamp(15px, 4.4vw, 22px);
-            white-space: nowrap;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 16px;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-        }
-        .hero-title .highlight {
-            background: linear-gradient(135deg, #fbbf24 0%, #f43f5e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* 📸 ক্লিয়ার ও ফুল এইচডি ফটো ফ্রেম */
-        .photo-container {
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-            margin-bottom: 16px;
-            background: #111827;
-        }
-        .clean-tour-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-            image-rendering: -webkit-optimize-contrast;
-        }
-
-        /* ছবির নিচে পারফেক্ট অ্যালাইনমেন্ট টেক্সট বক্স */
-        .hero-sub {
-            font-size: 13.5px;
-            color: #cbd5e1;
-            line-height: 1.85;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.35);
-            padding: 18px 16px;
-            border-radius: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 16px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            padding-bottom: 10px;
-        }
-
-        /* 📅 ৩ডি ক্যালেন্ডার (পরিস্কার বাংলা সংখ্যা) */
-        .calendar-weekdays {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            text-align: center;
-            font-size: 12px;
-            font-weight: 700;
-            color: #64748b;
-            margin-bottom: 8px;
-        }
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 6px;
-        }
-        .day-cell {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Noto Sans Bengali', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: #e2e8f0;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            user-select: none;
-        }
-        .day-cell:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-2px);
-        }
-        .day-cell.holiday {
-            border: 1px solid rgba(239, 68, 68, 0.5);
-            color: #f87171;
-            background: rgba(239, 68, 68, 0.05);
-        }
-        .day-cell.selected {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
-            color: #ffffff !important;
-            border-color: #a78bfa !important;
-            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.45);
-            transform: scale(1.05);
-        }
-
-        /* 📍 স্পট ও ডিউটি অপশন বাটন */
-        .selection-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-        .select-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1.5px solid rgba(255, 255, 255, 0.06);
-            padding: 13px 18px;
-            border-radius: 16px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            user-select: none;
-        }
-        .select-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(255, 255, 255, 0.15);
-        }
-        .select-card.active {
-            background: rgba(99, 102, 241, 0.18) !important;
-            border-color: #6366f1 !important;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3) !important;
-        }
-        .select-card span {
-            font-size: 14.5px;
-            font-weight: 600;
-        }
-
-        /* 🔘 পারফেক্ট রেডিও সার্কেল */
-        .radio-circle {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-            flex-shrink: 0;
-        }
-        .circle-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: transparent;
-            transition: all 0.2s ease;
-        }
-        .select-card.active .radio-circle {
-            border-color: #6366f1 !important;
-            box-shadow: 0 0 10px rgba(99, 102, 241, 0.6) !important;
-        }
-        .select-card.active .circle-dot {
-            background: #6366f1 !important;
-        }
-
-        /* ✍️ ৩ডি ইনপুট ও সাবমিট বাটন */
-        .input-box {
-            width: 100%;
-            background: rgba(11, 15, 25, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 14px 16px;
-            border-radius: 14px;
-            color: #ffffff;
-            font-size: 14px;
-            outline: none;
-            margin-bottom: 12px;
-            transition: 0.2s;
-        }
-        .input-box:focus {
-            border-color: #6366f1;
-            box-shadow: 0 0 12px rgba(99, 102, 241, 0.3);
-        }
-
-        .btn-3d {
-            width: 100%;
-            background: linear-gradient(180deg, #6366f1 0%, #4f46e5 100%);
-            color: #ffffff;
-            border: none;
-            border-bottom: 4px solid #3730a3;
-            padding: 14px;
-            border-radius: 14px;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
-            transition: all 0.15s;
-        }
-        .btn-3d:active {
-            transform: translateY(3px);
-            border-bottom-width: 1px;
-        }
-
-        /* 🎫 ইউজারের লাইভ কনফার্মেশন টিকেট */
-        .ticket-view {
-            display: none;
-            background: rgba(16, 185, 129, 0.08);
-            border: 1.5px dashed #10b981;
-            border-radius: 18px;
-            padding: 18px;
-            margin-top: 16px;
-            animation: fadeIn 0.4s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* 📊 ফলাফল স্ট্যাটাস বার */
-        .stat-bar-container {
-            margin-bottom: 16px;
-        }
-        .stat-item {
-            margin-bottom: 10px;
-        }
-        .stat-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            font-weight: 700;
-            color: #cbd5e1;
-            margin-bottom: 4px;
-        }
-        .bar-bg {
-            height: 7px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #6366f1, #a855f7);
-            border-radius: 10px;
-            transition: width 0.5s ease;
-        }
-
-        /* 📋 বিস্তারিত ফলাফলের ৩ডি কার্ড */
-        .detailed-voter-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 16px;
-            padding: 14px 16px;
-            margin-bottom: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .voter-top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 8px;
-        }
-        .voter-name-bold {
-            font-size: 15px;
-            font-weight: 800;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .duty-badge-tag {
-            font-size: 11px;
-            background: rgba(16, 185, 129, 0.15);
-            color: #34d399;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 3px 8px;
-            border-radius: 20px;
-            font-weight: 700;
-        }
-        .voter-meta-row {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            font-size: 12.5px;
-            color: #94a3b8;
-        }
-        .voter-meta-row strong {
-            color: #e2e8f0;
-        }
-
-        /* 🎡 লটারি স্পিনার ৩ডি */
-        .wheel-center-layout {
-            position: relative;
-            width: 270px;
-            height: 270px;
-            margin: 15px auto;
-        }
-        canvas#wheelCanvas {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-        }
-        .wheel-pin {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 14px solid transparent;
-            border-right: 14px solid transparent;
-            border-top: 24px solid #ef4444;
-            z-index: 20;
-            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.6));
-        }
-
-        /* 🚀 শেয়ার বাটন ৩ডি */
-        .share-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-        .btn-share {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 13px;
-            border-radius: 14px;
-            font-size: 13px;
-            font-weight: 700;
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.15s;
-        }
-        .btn-messenger {
-            background: linear-gradient(180deg, #0084ff 0%, #0066cc 100%);
-            border-bottom: 3px solid #004d99;
-        }
-        .btn-copy {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-bottom: 3px solid rgba(255, 255, 255, 0.2);
-        }
-        .btn-share:active {
-            transform: translateY(2px);
-            border-bottom-width: 1px;
-        }
-
-        /* ⏳ কাউন্টডাউন ওয়ার্নিং */
-        .countdown-card {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(168, 85, 247, 0.1));
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            text-align: center;
-            padding: 20px;
-            border-radius: 20px;
-        }
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 10px;
-        }
-        .countdown-unit {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 8px 12px;
-            border-radius: 12px;
-            min-width: 58px;
-        }
-        .countdown-num {
-            font-family: 'Noto Sans Bengali', sans-serif;
-            font-size: 20px;
-            font-weight: 800;
-            color: #fbbf24;
-        }
-        .countdown-label {
-            font-size: 10px;
-            color: #94a3b8;
-            font-weight: 600;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🔥</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<style>
+:root{--bg:#070a14;--card:rgba(20,26,46,.72);--line:rgba(255,255,255,.09);--txt:#eef2ff;--mut:#94a3b8;--a:#7c6cff;--b:#ff5fa2;--c:#ffb84d;--ok:#34d399}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Hind Siliguri','Noto Sans Bengali',sans-serif;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--txt);min-height:100vh;padding-bottom:70px;overflow-x:hidden}
+.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.aurora i{position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(110px);opacity:.28;animation:drift 18s ease-in-out infinite alternate}
+.aurora i:nth-child(1){background:var(--a);top:-120px;left:-120px}
+.aurora i:nth-child(2){background:var(--b);bottom:0;right:-140px;animation-delay:-6s}
+.aurora i:nth-child(3){background:var(--c);top:45%;left:30%;opacity:.12;animation-delay:-11s}
+@keyframes drift{to{transform:translate(60px,40px) scale(1.15)}}
+@media(prefers-reduced-motion:reduce){.aurora i{animation:none}}
+.top{position:sticky;top:0;z-index:50;display:flex;justify-content:center;align-items:center;gap:10px;padding:11px 16px;background:rgba(7,10,20,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);font-weight:700;font-size:14px;color:var(--c)}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--mut);font-weight:600}
+.live b{width:8px;height:8px;border-radius:50%;background:#64748b}
+.live.on b{background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px transparent}}
+.wrap{max-width:480px;margin:0 auto;padding:16px;display:flex;flex-direction:column;gap:18px}
+.card{background:var(--card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-top-color:rgba(255,255,255,.18);border-radius:26px;padding:22px;box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.hero{text-align:center;padding:20px}
+.pill{display:inline-block;background:rgba(255,95,162,.15);border:1px solid rgba(255,95,162,.45);color:#ffb3d3;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+h1{display:block;white-space:nowrap;font-family:'Noto Sans Bengali',sans-serif;font-size:22px;line-height:1.5;font-weight:800;margin-bottom:16px;background:linear-gradient(120deg,#fff 10%,var(--c) 55%,var(--b));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.photo{border-radius:20px;overflow:hidden;border:1px solid var(--line);margin-bottom:16px;box-shadow:0 14px 32px rgba(0,0,0,.5)}
+.photo img{width:100%;display:block;height:auto}
+.sub{font-size:14px;color:#cbd5e1;line-height:1.85;background:rgba(0,0,0,.3);padding:16px;border-radius:18px;border:1px solid var(--line)}
+.sh{font-size:16px;font-weight:700;margin-bottom:6px}
+.hint{font-size:12.5px;color:var(--mut);margin-bottom:14px}
+.wd,.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.wd{font-size:12px;font-weight:700;color:#64748b;margin-bottom:8px}
+.day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans Bengali',sans-serif;font-size:15px;font-weight:600;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer;user-select:none;transition:.18s}
+.day:hover{background:rgba(255,255,255,.09)}
+.day.off{color:#fb7185;border-color:rgba(251,113,133,.4)}
+.day.sel{background:linear-gradient(135deg,var(--a),var(--b));border-color:transparent;color:#fff;box-shadow:0 6px 16px rgba(124,108,255,.45);transform:scale(1.06)}
+.sel-box{display:flex;justify-content:space-between;gap:10px;margin-top:14px;font-size:13px;background:rgba(0,0,0,.28);padding:10px 14px;border-radius:12px}
+.sel-box span:last-child{color:#b9b0ff;font-weight:700;text-align:right}
+.opts{display:flex;flex-direction:column;gap:10px;margin-bottom:6px}
+.opt{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-radius:16px;background:rgba(255,255,255,.035);border:1.5px solid var(--line);cursor:pointer;font-size:15px;font-weight:600;transition:.18s;user-select:none}
+.opt:hover{border-color:rgba(255,255,255,.22)}
+.opt i{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.3);display:grid;place-items:center;flex-shrink:0}
+.opt i::after{content:"";width:10px;height:10px;border-radius:50%;background:transparent;transition:.18s}
+.opt.on{background:rgba(124,108,255,.18);border-color:var(--a);box-shadow:0 4px 16px rgba(124,108,255,.28)}
+.opt.on i{border-color:var(--a)}.opt.on i::after{background:var(--a)}
+input{width:100%;background:rgba(7,10,20,.8);border:1px solid rgba(255,255,255,.14);padding:14px 16px;border-radius:14px;color:#fff;font-size:15px;outline:none;margin:14px 0 12px}
+input:focus,.btn:focus-visible,.opt:focus-visible,.day:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+.btn{width:100%;border:0;border-bottom:4px solid #3b2fb3;background:linear-gradient(180deg,#8b7dff,#6a58f0);color:#fff;padding:14px;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(106,88,240,.35);transition:.12s}
+.btn:active{transform:translateY(3px);border-bottom-width:1px}
+.btn:disabled{opacity:.6}
+.alt{background:rgba(255,255,255,.08);border-bottom-color:rgba(255,255,255,.2);box-shadow:none}
+.ticket{display:none;margin-top:16px;padding:16px;border:1.5px dashed var(--ok);border-radius:18px;background:rgba(52,211,153,.08);font-size:13.5px;line-height:1.7}
+.warn{display:none;background:rgba(251,113,133,.12);border:1px solid rgba(251,113,133,.5);color:#fecdd3;padding:12px 14px;border-radius:14px;font-size:13px;line-height:1.6}
+.bar{margin-bottom:11px}.bar div:first-child{display:flex;justify-content:space-between;font-size:12.5px;font-weight:600;margin-bottom:4px}
+.track{height:8px;background:rgba(255,255,255,.07);border-radius:10px;overflow:hidden}
+.track b{display:block;height:100%;border-radius:10px;background:linear-gradient(90deg,var(--a),var(--b));transition:width .6s}
+.track.d b{background:linear-gradient(90deg,var(--c),var(--b))}
+.lbl{font-size:13px;font-weight:700;color:#cbd5e1;margin:18px 0 10px}
+.v{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:16px;padding:13px 15px;margin-bottom:10px}
+.v .t{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-bottom:8px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+.v .n{font-size:15px;font-weight:700}
+.v .g{font-size:11px;font-weight:700;color:var(--ok);background:rgba(52,211,153,.14);border:1px solid rgba(52,211,153,.3);padding:3px 9px;border-radius:20px;white-space:nowrap}
+.v p{font-size:12.5px;color:var(--mut);line-height:1.7}.v strong{color:#e2e8f0}
+.empty{text-align:center;color:var(--mut);font-size:13px;padding:14px}
+.wheel{position:relative;width:270px;height:270px;margin:14px auto}
+.wheel canvas{width:100%;height:100%;border-radius:50%;box-shadow:0 10px 34px rgba(0,0,0,.55),0 0 0 6px rgba(255,255,255,.07)}
+.pin{position:absolute;top:-10px;left:50%;transform:translateX(-50%);border:14px solid transparent;border-top:24px solid #ef4444;border-bottom:0;z-index:5;filter:drop-shadow(0 3px 5px rgba(0,0,0,.6))}
+.res{margin-top:14px;font-size:17px;font-weight:800;color:var(--c);min-height:26px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.msg{background:linear-gradient(180deg,#1a8cff,#0a66d6);border-bottom-color:#064a9c}
+.cd{text-align:center;padding:20px;border-radius:24px;border:1px solid rgba(255,95,162,.3);background:linear-gradient(135deg,rgba(255,95,162,.14),rgba(124,108,255,.12))}
+.cdrow{display:flex;justify-content:center;gap:10px;margin-top:12px}
+.cdrow div{background:rgba(0,0,0,.4);border:1px solid var(--line);border-radius:12px;min-width:60px;padding:8px}
+.cdrow b{display:block;font-family:'Noto Sans Bengali',sans-serif;font-size:21px;color:var(--c)}
+.cdrow small{font-size:11px;color:var(--mut)}
+</style>
 </head>
 <body>
+<div class="aurora"><i></i><i></i><i></i></div>
+<div class="top">🔥 ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ <span class="live" id="live"><b></b><span id="liveTxt">কানেক্ট হচ্ছে…</span></span></div>
 
-    <!-- সফট ব্যাকগ্রাউন্ড অরবস -->
-    <div class="bg-glow glow-left"></div>
-    <div class="bg-glow glow-right"></div>
+<div class="wrap">
+  <div class="warn" id="warn">⚠️ Firebase এখনো কানেক্ট করা হয়নি। ফাইলের উপরের দিকে <strong>firebaseConfig</strong> অংশে তোর নিজের কনফিগ পেস্ট কর।</div>
 
-    <!-- শীর্ষ টিকার -->
-    <div class="top-ticker">
-        🔥 ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬
+  <div class="card hero">
+    <div class="pill">কোনো বাহানা চলবে না</div>
+    <h1>বন্ধুরা, এবার হবে শতাব্দীর সেরা পাগল করা ট্যুর</h1>
+    <div class="photo"><img src="cover.jpg" alt="ট্যুরের স্মৃতি"></div>
+    <div class="sub">বন্ধুরা, অনেক তো হলো সংসার সাধন আর দায়িত্বের ঘানি টানা! বয়স বাড়ছে, ব্যস্ততা বাড়ছে—এবার নিজের জন্য একটু সময় দেওয়ার পালা। সব পিছুটান ভুলে চল সবাই মিলে হারিয়ে যাই, পুরোনো দিনের গান আর আড্ডায়।<br><br>ক্যালেন্ডারে তোর সুবিধার দিনগুলোতে সিল মার, স্পট বেছে নে আর দায়িত্ব কাঁধে তুলে নে। দেখা যাক কপাল কার সাথে কথা কয়!</div>
+  </div>
+
+  <div class="card">
+    <div class="sh">📅 ডিসেম্বরের কোন কোন দিন ফ্রি আছিস?</div>
+    <p class="hint">এক বা একাধিক দিন ট্যাপ করে সিলেক্ট কর। লাল দিনগুলো ছুটির দিন।</p>
+    <div class="wd"><span>রবি</span><span>সোম</span><span>মঙ্গল</span><span>বুধ</span><span>বৃহ</span><span style="color:#fb7185">শুক্র</span><span style="color:#fb7185">শনি</span></div>
+    <div class="cal" id="cal"></div>
+    <div class="sel-box"><span style="color:var(--mut)">তোর বাছা দিন:</span><span id="selTxt">কোনো দিন সিলেক্ট করিসনি</span></div>
+  </div>
+
+  <div class="card">
+    <div class="sh">📍 কোথায় যেতে চাস?</div>
+    <div class="opts" id="places"></div>
+  </div>
+
+  <div class="card">
+    <div class="sh">👑 ট্যুরে তোর দায়িত্ব কী হবে?</div>
+    <p class="hint">ট্যুর সফল করতে একটা দায়িত্ব বেছে নে।</p>
+    <div class="opts" id="duties"></div>
+    <input id="name" placeholder="তোর নাম লেখ…" maxlength="30" autocomplete="off">
+    <button class="btn" id="submit">ভোট মাইরা দে 🚀</button>
+    <div class="ticket" id="ticket"></div>
+  </div>
+
+  <div class="card">
+    <div class="sh">📊 এখন পর্যন্ত ফলাফল <span style="font-size:12px;color:var(--mut)">(সবার ভোট লাইভ)</span></div>
+    <p class="hint" id="total"></p>
+    <div id="placeBars"></div>
+    <div class="lbl">🗓️ সবচেয়ে জনপ্রিয় তারিখ</div>
+    <div id="dateBars"></div>
+    <div class="lbl">👥 কে কী ভোট দিল</div>
+    <div id="list"><div class="empty">লোড হচ্ছে…</div></div>
+  </div>
+
+  <div class="card" style="text-align:center">
+    <div class="sh">🎰 বন্ধু, অনেক কষ্ট করলি! এবার কপালটা দেখ</div>
+    <div class="wheel"><div class="pin"></div><canvas id="wheel" width="300" height="300"></canvas></div>
+    <button class="btn" id="spin" style="max-width:230px;border-radius:50px">চাকা ঘুরা মামা 🎰</button>
+    <div class="res" id="win"></div>
+  </div>
+
+  <div class="card">
+    <div class="sh">🚀 বন্ধুদের পাঠা, যেন কেউ মিস না করে</div>
+    <div class="two" style="margin-top:12px">
+      <button class="btn msg" id="shareBtn">মেসেঞ্জারে শেয়ার</button>
+      <button class="btn alt" id="copyBtn">🔗 লিংক কপি</button>
     </div>
+  </div>
 
-    <div class="main-wrapper">
-
-        <!-- 🖼️ হিরো সেকশন -->
-        <div class="glass-card hero-box">
-            <div class="badge-pill">
-                কোনো বাহানা চলবে না
-            </div>
-            
-            <!-- ১ লাইনে লক করা পরিষ্কার টাইটেল -->
-            <h1 class="hero-title">
-                <span class="highlight">বন্ধুরা, এবার হবে শতাব্দীর সেরা পাগল করা ট্যুর</span>
-            </h1>
-
-            <!-- 📸 আপনাদের পুলের ছবি (ক্রিস্টাল ক্লিয়ার ফুল এইচডি) -->
-            <div class="photo-container">
-                <img src="cover.jpg" onerror="this.src='https://i.postimg.cc/21m2QnYg/image.jpg'" class="clean-tour-img" alt="ট্যুরের স্মৃতি">
-            </div>
-
-            <!-- ছবির নিচে সুন্দরভাবে সাজানো ইমোশনাল বর্ণনা -->
-            <div class="hero-sub">
-                বন্ধুরা, অনেক তো হলো সংসার সাধন আর দায়িত্বের ঘানি টানা! জীবনের অর্ধেকটা সময় তো পরিবার, ক্যারিয়ার আর সমাজের নিয়ম মানতেই পার হয়ে গেল। বয়স বাড়ছে, ব্যস্ততা বাড়ছে—এবার নিজের জন্য নিজেকে একটু সময় দেওয়ার পালা। সব পিছুটান ভুলে চল সবাই মিলে হারিয়ে যাই , পুরোনো দিনের গান আর আড্ডা।
-                <br><br>
-                ক্যালেন্ডারে তোর সুবিধাজনক দিনগুলোতে সিল মার, স্পট বেছে নে আর ট্যুরের দায়িত্ব কাঁধে তুলে নে। দেখা যাক কপাল কার সাথে কথা কয়!
-            </div>
-        </div>
-
-        <!-- 📅 ১. ক্যালেন্ডার সেকশন -->
-        <div class="glass-card">
-            <div class="section-header">
-                <i class="fa-solid fa-calendar-days text-indigo-400"></i>
-                <span>১. তুই ডিসেম্বরের কোন কোন দিন ফ্রি আছিস?</span>
-            </div>
-            <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">
-                তোর সুবিধাজনক তারিখগুলোতে ট্যাপ করে মার্ক কর (এক বা একাধিক দিন সিলেক্ট করা যাবে):
-            </p>
-
-            <div class="calendar-weekdays">
-                <span>রবি</span><span>সোম</span><span>মঙ্গল</span><span>বুধ</span><span>বৃহ</span><span style="color:#f87171">শুক্র</span><span style="color:#f87171">শনি</span>
-            </div>
-            
-            <div class="calendar-grid" id="calendarGrid">
-                <!-- দিনগুলো জাভাস্ক্রিপ্ট জেনারেট করবে -->
-            </div>
-
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 13px; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                <span style="color: #94a3b8;">তোর বাছা দিনগুলো:</span>
-                <span id="selectedDaysText" style="color: #a78bfa; font-weight: 700;">কোনো দিন সিলেক্ট করিসনি</span>
-            </div>
-        </div>
-
-        <!-- 📍 ২. স্পট সিলেকশন -->
-        <div class="glass-card">
-            <div class="section-header">
-                <i class="fa-solid fa-map-location-dot text-pink-400"></i>
-                <span>২. তুই কোথায় যেতে চাস? (স্পট বেছে নে)</span>
-            </div>
-
-            <div class="selection-list" id="placeOptionsList">
-                <div class="select-card place-card" onclick="selectPlace(this, 'সুন্দরবন 🐅')">
-                    <span>সুন্দরবন 🐅</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-                <div class="select-card place-card" onclick="selectPlace(this, 'বান্দরবান ⛰️')">
-                    <span>বান্দরবান ⛰️</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-                <div class="select-card place-card" onclick="selectPlace(this, 'রাঙ্গামাটি 🏞️')">
-                    <span>রাঙ্গামাটি 🏞️</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-                <div class="select-card place-card" onclick="selectPlace(this, 'সেন্টমার্টিন 🌊')">
-                    <span>সেন্টমার্টিন 🌊</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-                <div class="select-card place-card" onclick="selectPlace(this, 'যেখানে খুশি 📍')">
-                    <span>যেখানে খুশি 📍</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 👑 ৩. দায়িত্ব নির্বাচন -->
-        <div class="glass-card">
-            <div class="section-header">
-                <i class="fa-solid fa-hand-holding-heart text-emerald-400"></i>
-                <span>৩. এই ট্যুরে তুই কী দায়িত্ব নিতে চাস?</span>
-            </div>
-            <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">
-                ট্যুরকে সফল ও স্মৃতিময় করতে নিজের একটি দায়িত্ব বেছে নে:
-            </p>
-
-            <div class="selection-list" id="dutyOptionsList">
-                <div class="select-card duty-card" onclick="selectDuty(this, '👑 ট্যুর ম্যানেজার')">
-                    <span>👑 ট্যুর ম্যানেজার</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-                <div class="select-card duty-card" onclick="selectDuty(this, '💰 ক্যাশিয়ার')">
-                    <span>💰 ক্যাশিয়ার</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-                <div class="select-card duty-card" onclick="selectDuty(this, '🧭 গাইড')">
-                    <span>🧭 গাইড</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-                <div class="select-card duty-card" onclick="selectDuty(this, '🍖 খাবার স্পেশালিস্ট')">
-                    <span>🍖 খাবার স্পেশালিস্ট</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-                <div class="select-card duty-card" onclick="selectDuty(this, '📸 ফটোগ্রাফার')">
-                    <span>📸 ফটোগ্রাফার</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-                <div class="select-card duty-card" onclick="selectDuty(this, '🎸 বিনোদন স্পেশালিস্ট')">
-                    <span>🎸 বিনোদন স্পেশালিস্ট</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-                <div class="select-card duty-card" onclick="selectDuty(this, '😎 শুধু চিল')">
-                    <span>😎 শুধু চিল</span>
-                    <div class="radio-circle"><div class="circle-dot"></div></div>
-                </div>
-            </div>
-
-            <!-- নাম ও সাবমিট বাটন -->
-            <input type="text" id="voterName" class="input-box" placeholder="তোর নাম লেখ...">
-            <button class="btn-3d" onclick="submitTourVote()">ভোট মাইরা দে 🚀</button>
-
-            <!-- 🎫 কনফার্মেশন টিকেট -->
-            <div class="ticket-view" id="ticketView">
-                <div style="display: flex; align-items: center; gap: 8px; color: #10b981; font-weight: 700; margin-bottom: 6px;">
-                    <i class="fa-solid fa-circle-check"></i> তোর ভোট কনফার্ম হয়েছে মামা!
-                </div>
-                <div style="font-size: 13px; line-height: 1.6; color: #e2e8f0;">
-                    👤 <strong>নাম:</strong> <span id="ticketName">-</span><br>
-                    📍 <strong>পছন্দের স্পট:</strong> <span id="ticketPlace">-</span><br>
-                    📅 <strong>সিলেক্ট করা তারিখ:</strong> <span id="ticketDates">-</span><br>
-                    🎖️ <strong>ট্যুরের দায়িত্ব:</strong> <span id="ticketDuty" style="color: #34d399;">-</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 📊 ৪. লাইভ ফলাফল শিট -->
-        <div class="glass-card">
-            <div class="section-header">
-                <i class="fa-solid fa-chart-pie text-emerald-400"></i>
-                <span>এখন পর্যন্ত ফলাফল (রিয়েলটাইম শিট)</span>
-            </div>
-
-            <!-- স্পট ভিত্তিক লাইভ স্ট্যাটাস বার -->
-            <div class="stat-bar-container" id="statBarContainer"></div>
-
-            <div style="font-size: 13px; color: #cbd5e1; margin: 16px 0 10px 0; font-weight: 700; display: flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-users text-indigo-400"></i> বন্ধুদের ভোটের বিস্তারিত তালিকা:
-            </div>
-            
-            <div id="votersListContainer">
-                <!-- বিস্তারিত কার্ডগুলো এখানে শো করবে -->
-            </div>
-        </div>
-
-        <!-- 🎡 ৫. লাইভ লটারি স্পিনার (টাকা জেতার চাকা) -->
-        <div class="glass-card" style="text-align: center;">
-            <div class="section-header" style="justify-content: center;">
-                <i class="fa-solid fa-sack-dollar text-amber-400"></i>
-                <span>৫. বন্ধু অনেক কষ্ট করলি এবার কপাল টা দেখ-</span>
-            </div>
-            <p style="font-size: 13px; color: #34d399; font-weight: 700; margin-bottom: 8px;">কত টাকা পাবি</p>
-
-            <div class="wheel-center-layout">
-                <div class="wheel-pin"></div>
-                <canvas id="wheelCanvas" width="300" height="300"></canvas>
-            </div>
-
-            <button class="btn-3d" id="spinBtn" onclick="spinWheel()" style="max-width: 220px; margin: 0 auto; display: block; border-radius: 50px;">
-                চাকা ঘুরা মামা 🎰
-            </button>
-            <div id="winnerResult" style="margin-top: 14px; font-size: 17px; font-weight: 800; color: #fbbf24; min-height: 24px;"></div>
-        </div>
-
-        <!-- 🚀 ৬. বন্ধুদের সাথে শেয়ার -->
-        <div class="glass-card">
-            <div class="section-header">
-                <i class="fa-solid fa-share-nodes text-cyan-400"></i>
-                <span>৬. বন্ধুদের মেসেঞ্জারে পাঠা (যেন কেউ মিস না করে)</span>
-            </div>
-
-            <div class="share-grid">
-                <button onclick="shareMessenger()" class="btn-share btn-messenger">
-                    <i class="fa-brands fa-facebook-messenger" style="font-size: 16px;"></i> মেসেঞ্জারে শেয়ার
-                </button>
-                <button onclick="copyTourLink()" class="btn-share btn-copy">
-                    <i class="fa-solid fa-link" style="font-size: 14px;"></i> লিংক কপি কর
-                </button>
-            </div>
-        </div>
-
-        <!-- ⏳ ৭. কাউন্টডাউন ওয়ার্নিং অ্যালার্ট -->
-        <div class="countdown-card">
-            <div style="font-size: 14px; font-weight: 800; color: #f87171; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                <i class="fa-solid fa-clock"></i> সময় কিন্তু দ্রুত ফুরাচ্ছে মামা!
-            </div>
-            <p style="font-size: 11px; color: #cbd5e1; margin-top: 4px;">
-                ডিসেম্বর ২০২৬ ব্যাচেলর ট্যুর শুরু হতে আর মাত্র বাকি:
-            </p>
-
-            <div class="countdown-timer">
-                <div class="countdown-unit">
-                    <div class="countdown-num" id="cdDays">০০</div>
-                    <div class="countdown-label">দিন</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-num" id="cdHours">০০</div>
-                    <div class="countdown-label">ঘণ্টা</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-num" id="cdMins">০০</div>
-                    <div class="countdown-label">মিনিট</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-num" id="cdSecs">০০</div>
-                    <div class="countdown-label">সেকেন্ড</div>
-                </div>
-            </div>
-        </div>
-
+  <div class="cd">
+    <div style="font-weight:800;color:#fb7185">⏳ সময় কিন্তু দ্রুত ফুরাচ্ছে মামা!</div>
+    <div class="cdrow">
+      <div><b id="cd0">০</b><small>দিন</small></div><div><b id="cd1">০</b><small>ঘণ্টা</small></div>
+      <div><b id="cd2">০</b><small>মিনিট</small></div><div><b id="cd3">০</b><small>সেকেন্ড</small></div>
     </div>
+  </div>
+</div>
 
-    <!-- লজিক ও জাভাস্ক্রিপ্ট -->
-    <script>
-        const bnDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
-        function toBanglaNum(num) {
-            return num.toString().split('').map(d => bnDigits[d] || d).join('');
-        }
+<script>
+/* ====== 👇 এখানে তোর Firebase কনফিগ পেস্ট কর (Project settings > Your apps থেকে) ====== */
+window.FIREBASE_CONFIG = {
+  apiKey: "AIzaSyD8yy6SXkHipJzZgDjxMowpj-JF9ffhiP4",
+  authDomain: "december-tour.firebaseapp.com",
+  projectId: "december-tour",
+  storageBucket: "december-tour.firebasestorage.app",
+  messagingSenderId: "1056125849193",
+  appId: "1:1056125849193:web:3b9a1118fe9063146fdcf8"
+};
+/* ================================================================================== */
+</script>
+<script>
+const $ = id => document.getElementById(id);
+const bn = n => String(n).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const PLACES = ['সুন্দরবন 🐅','বান্দরবান ⛰️','রাঙ্গামাটি 🏞️','সেন্টমার্টিন 🌊','যেখানে খুশি 📍'];
+const DUTIES = ['👑 ট্যুর ম্যানেজার','💰 ক্যাশিয়ার','🧭 গাইড','🍖 খাবার স্পেশালিস্ট','📸 ফটোগ্রাফার','🎸 বিনোদন স্পেশালিস্ট','😎 শুধু চিল'];
+let dates = [], place = '', duty = '', votes = [];
 
-        // ১. ক্যালেন্ডার ইনিশিয়ালাইজ (ডিসেম্বর ২০২৬)
-        const calendarGrid = document.getElementById('calendarGrid');
-        const selectedDaysText = document.getElementById('selectedDaysText');
-        let selectedDates = [];
+/* ক্যালেন্ডার: ১ ডিসেম্বর ২০২৬ = মঙ্গলবার */
+const cal = $('cal');
+for (let i = 0; i < 2; i++) cal.appendChild(document.createElement('div'));
+for (let d = 1; d <= 31; d++) {
+  const c = document.createElement('div');
+  c.className = 'day' + ([16,25].includes(d) ? ' off' : '');
+  c.textContent = bn(d); c.tabIndex = 0;
+  const tog = () => {
+    c.classList.toggle('sel');
+    dates = dates.includes(d) ? dates.filter(x => x !== d) : [...dates, d].sort((a,b) => a-b);
+    $('selTxt').textContent = dates.length ? dates.map(bn).join(', ') + ' ডিসেম্বর (' + bn(dates.length) + ' দিন)' : 'কোনো দিন সিলেক্ট করিসনি';
+  };
+  c.onclick = tog; c.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tog(); } };
+  cal.appendChild(c);
+}
 
-        const emptyCells = 2; // ১ ডিসেম্বর ২০২৬ মঙ্গলবার
-        const totalMonthDays = 31;
-        const holidayDates = [16, 25];
+/* অপশন লিস্ট */
+function buildOpts(id, items, onPick) {
+  const box = $(id);
+  items.forEach(t => {
+    const o = document.createElement('div');
+    o.className = 'opt'; o.tabIndex = 0; o.innerHTML = '<span>' + t + '</span><i></i>';
+    const pick = () => { box.querySelectorAll('.opt').forEach(x => x.classList.remove('on')); o.classList.add('on'); onPick(t); };
+    o.onclick = pick; o.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } };
+    box.appendChild(o);
+  });
+}
+buildOpts('places', PLACES, t => place = t);
+buildOpts('duties', DUTIES, t => duty = t);
 
-        for (let i = 0; i < emptyCells; i++) {
-            const empty = document.createElement('div');
-            calendarGrid.appendChild(empty);
-        }
+/* Firebase (ফেইল করলেও UI চলবে) */
+let fb = null;
+const cfg = window.FIREBASE_CONFIG || {};
+const configured = cfg.apiKey && !String(cfg.apiKey).startsWith('PASTE');
+function showWarn(t) { $('warn').style.display = 'block'; $('warn').textContent = t; }
+if (!configured) { showWarn('⚠️ Firebase এখনো কানেক্ট করা হয়নি। ফাইলের উপরের দিকে firebaseConfig অংশে তোর নিজের কনফিগ পেস্ট কর।'); $('liveTxt').textContent = 'অফলাইন'; render(); }
+else (async () => {
+  try {
+    const A = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
+    const F = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js');
+    const db = F.getFirestore(A.initializeApp(cfg));
+    fb = { db, addDoc: F.addDoc, collection: F.collection, serverTimestamp: F.serverTimestamp };
+    F.onSnapshot(F.query(F.collection(db, 'votes'), F.orderBy('createdAt', 'desc')), snap => {
+      votes = snap.docs.map(d => d.data());
+      $('live').classList.add('on'); $('liveTxt').textContent = 'লাইভ'; render();
+    }, err => { console.error(err); $('liveTxt').textContent = 'এরর'; showWarn('⚠️ ডাটা লোড হয়নি। Firestore Rules ঠিক আছে কিনা দেখ। (' + err.code + ')'); render(); });
+  } catch (e) { console.error(e); $('liveTxt').textContent = 'এরর'; showWarn('⚠️ Firebase লোড হয়নি। কনফিগ ঠিক আছে কিনা আর ইন্টারনেট চেক কর।'); render(); }
+})();
 
-        for (let day = 1; day <= totalMonthDays; day++) {
-            const cell = document.createElement('div');
-            cell.className = 'day-cell';
-            cell.innerText = toBanglaNum(day);
-            if (holidayDates.includes(day)) cell.classList.add('holiday');
+function bars(el, rows, total, cls) {
+  el.innerHTML = rows.map(([label, n]) => {
+    const p = total ? Math.round(n / total * 100) : 0;
+    return '<div class="bar"><div><span>' + label + '</span><span>' + bn(n) + ' ভোট (' + bn(p) + '%)</span></div><div class="track ' + (cls||'') + '"><b style="width:' + p + '%"></b></div></div>';
+  }).join('');
+}
 
-            cell.onclick = () => {
-                cell.classList.toggle('selected');
-                if (selectedDates.includes(day)) {
-                    selectedDates = selectedDates.filter(d => d !== day);
-                } else {
-                    selectedDates.push(day);
-                }
-                selectedDates.sort((a, b) => a - b);
-                
-                if (selectedDates.length === 0) {
-                    selectedDaysText.innerText = 'কোনো দিন সিলেক্ট করিসনি';
-                } else {
-                    const banglaDates = selectedDates.map(d => toBanglaNum(d)).join(', ');
-                    selectedDaysText.innerText = banglaDates + ' ডিসেম্বর (' + toBanglaNum(selectedDates.length) + ' দিন)';
-                }
-            };
-            calendarGrid.appendChild(cell);
-        }
+function render() {
+  const N = votes.length;
+  $('total').textContent = N ? 'মোট ' + bn(N) + ' জন ভোট দিয়েছে' : '';
+  bars($('placeBars'), PLACES.map(p => [p, votes.filter(v => v.place === p).length]), N);
+  const dc = {};
+  votes.forEach(v => (v.dateList || []).forEach(d => dc[d] = (dc[d] || 0) + 1));
+  const top = Object.entries(dc).sort((a,b) => b[1]-a[1] || a[0]-b[0]).slice(0, 5);
+  top.length ? bars($('dateBars'), top.map(([d,n]) => [bn(d) + ' ডিসেম্বর', n]), N, 'd')
+             : $('dateBars').innerHTML = '<div class="empty">এখনো কোনো তারিখ বাছা হয়নি</div>';
+  $('list').innerHTML = N ? votes.map(v =>
+    '<div class="v"><div class="t"><span class="n">👤 ' + esc(v.name) + '</span><span class="g">' + esc(v.duty) + '</span></div>' +
+    '<p>📍 স্থান: <strong>' + esc(v.place) + '</strong><br>📅 তারিখ: <strong>' + esc(v.dates) + '</strong></p></div>').join('')
+    : '<div class="empty">এখনও কেউ ভোট দেয়নি!<br><strong style="color:#b9b0ff">তুই-ই প্রথম ভোট মাইরা খাতা খোল 🚀</strong></div>';
+}
 
-        // ২. স্পট সিলেকশন
-        let chosenPlace = '';
-        function selectPlace(element, placeName) {
-            chosenPlace = placeName;
-            document.querySelectorAll('.place-card').forEach(el => el.classList.remove('active'));
-            element.classList.add('active');
-        }
+$('submit').onclick = async () => {
+  const name = $('name').value.trim();
+  if (!dates.length) return alert('ক্যালেন্ডার থেকে অন্তত একটা দিন সিলেক্ট কর!');
+  if (!place) return alert('কোথায় যেতে চাস, একটা জায়গা বেছে নে!');
+  if (!duty) return alert('একটা দায়িত্ব তো বেছে নিবি মামা!');
+  if (!name) return alert('আগে তোর নামটা লেখ!');
+  if (!fb) return alert('Firebase কানেক্ট করা নেই। কনফিগ পেস্ট কর।');
+  const text = dates.map(bn).join(', ') + ' ডিসেম্বর (' + bn(dates.length) + ' দিন)';
+  const btn = $('submit'); btn.disabled = true; btn.textContent = 'পাঠানো হচ্ছে…';
+  try {
+    await fb.addDoc(fb.collection(fb.db, 'votes'), { name, place, duty, dates: text, dateList: dates, createdAt: fb.serverTimestamp() });
+    const t = $('ticket');
+    t.innerHTML = '<div style="color:var(--ok);font-weight:700;margin-bottom:4px">✅ তোর ভোট কনফার্ম হয়েছে মামা!</div>👤 <strong>নাম:</strong> ' + esc(name) +
+      '<br>📍 <strong>স্পট:</strong> ' + esc(place) + '<br>📅 <strong>তারিখ:</strong> ' + esc(text) + '<br>🎖️ <strong>দায়িত্ব:</strong> ' + esc(duty);
+    t.style.display = 'block';
+    confetti({ particleCount: 110, spread: 70, origin: { y: .7 } });
+    $('name').value = '';
+  } catch (e) {
+    console.error(e); alert('ভোট সেভ হয়নি 😢 Firestore Rules চেক কর। (' + e.code + ')');
+  }
+  btn.disabled = false; btn.textContent = 'ভোট মাইরা দে 🚀';
+};
 
-        // ৩. দায়িত্ব নির্বাচন
-        let chosenDuty = '';
-        function selectDuty(element, dutyName) {
-            chosenDuty = dutyName;
-            document.querySelectorAll('.duty-card').forEach(el => el.classList.remove('active'));
-            element.classList.add('active');
-        }
+/* টাইটেল এক লাইনে ফিট */
+function fitTitle() {
+  const h = document.querySelector('h1'); let z = 24; h.style.fontSize = z + 'px';
+  while (h.scrollWidth > h.clientWidth && z > 10) h.style.fontSize = (--z) + 'px';
+}
+fitTitle(); addEventListener('resize', fitTitle); document.fonts && document.fonts.ready.then(fitTitle);
 
-        // ৪. ফলাফল ও ভোট হ্যান্ডলার
-        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_v8_money')) || [];
+/* লটারি চাকা */
+const cv = $('wheel'), ctx = cv.getContext('2d');
+const REW = ['5,000 Taka','10,000 Taka','15,000 Taka','20,000 Taka','50,000 Taka'];
+const COL = ['#10b981','#3b82f6','#f59e0b','#ec4899','#8b5cf6'];
+let ang = 0, spinning = false;
+function draw() {
+  const s = 2 * Math.PI / REW.length;
+  ctx.clearRect(0, 0, 300, 300);
+  REW.forEach((r, i) => {
+    const a = ang + i * s;
+    ctx.fillStyle = COL[i]; ctx.beginPath(); ctx.moveTo(150, 150); ctx.arc(150, 150, 140, a, a + s); ctx.fill();
+    ctx.save(); ctx.translate(150 + Math.cos(a + s/2) * 90, 150 + Math.sin(a + s/2) * 90);
+    ctx.rotate(a + s/2 + Math.PI/2); ctx.fillStyle = '#fff'; ctx.font = "bold 13px 'Hind Siliguri',sans-serif";
+    ctx.fillText(r, -ctx.measureText(r).width / 2, 0); ctx.restore();
+  });
+  ctx.fillStyle = '#0b1020'; ctx.beginPath(); ctx.arc(150, 150, 24, 0, 7); ctx.fill();
+}
+$('spin').onclick = () => {
+  if (spinning) return; spinning = true; $('win').textContent = 'চাকা ঘুরছে… কপাল পরীক্ষা হচ্ছে!';
+  const total = (Math.random() * 360 + 1800) * Math.PI / 180, dur = 3800; let t0;
+  const step = ts => {
+    t0 = t0 || ts; const p = Math.min((ts - t0) / dur, 1);
+    ang = total * (1 - Math.pow(1 - p, 3)); draw();
+    if (p < 1) return requestAnimationFrame(step);
+    spinning = false;
+    const s = 2 * Math.PI / REW.length, pointer = ((-Math.PI/2 - ang) % (2*Math.PI) + 2*Math.PI) % (2*Math.PI);
+    $('win').textContent = '🎉 মামা তুই পাইলি: ' + REW[Math.floor(pointer / s)] + '! 💰';
+    confetti({ particleCount: 140, spread: 85, origin: { y: .6 } });
+  };
+  requestAnimationFrame(step);
+};
 
-        function renderResults() {
-            const allSpots = ['সুন্দরবন 🐅', 'বান্দরবান ⛰️', 'রাঙ্গামাটি 🏞️', 'সেন্টমার্টিন 🌊', 'যেখানে খুশি 📍'];
-            const spotCounts = {};
-            allSpots.forEach(s => spotCounts[s] = 0);
-            
-            votersData.forEach(v => {
-                if (spotCounts[v.place] !== undefined) spotCounts[v.place]++;
-            });
+/* শেয়ার */
+$('shareBtn').onclick = () => {
+  const url = location.href;
+  navigator.share ? navigator.share({ title: 'ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🔥', text: 'তারিখ, স্পট আর দায়িত্ব বেছে নে!', url }).catch(() => {})
+                  : window.open('https://www.facebook.com/dialog/send?link=' + encodeURIComponent(url) + '&app_id=291494419107518&redirect_uri=' + encodeURIComponent(url));
+};
+$('copyBtn').onclick = () => navigator.clipboard.writeText(location.href).then(() => alert('✅ লিংক কপি হইছে! মেসেঞ্জার গ্রুপে পেস্ট কর।'));
 
-            const statBarContainer = document.getElementById('statBarContainer');
-            statBarContainer.innerHTML = '';
-
-            const totalVotes = votersData.length;
-            allSpots.forEach(spot => {
-                const count = spotCounts[spot] || 0;
-                const percent = totalVotes > 0 ? Math.round((count / totalVotes) * 100) : 0;
-                statBarContainer.innerHTML += `
-                    <div class="stat-item">
-                        <div class="stat-label">
-                            <span>${spot}</span>
-                            <span>${toBanglaNum(count)} ভোট (${toBanglaNum(percent)}%)</span>
-                        </div>
-                        <div class="bar-bg">
-                            <div class="bar-fill" style="width: ${percent}%;"></div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            const container = document.getElementById('votersListContainer');
-            container.innerHTML = '';
-            
-            if (votersData.length === 0) {
-                container.innerHTML = `
-                    <div style="text-align: center; padding: 18px; color: #94a3b8; font-size: 13px;">
-                        এখনও কেউ ভোট দেয় নাই রে ভাই!<br><strong style="color: #a78bfa;">তুই-ই প্রথম ভোট মাইরা খাতা খোল! 🚀</strong>
-                    </div>
-                `;
-                return;
-            }
-
-            votersData.forEach(v => {
-                container.innerHTML += `
-                    <div class="detailed-voter-card">
-                        <div class="voter-top-row">
-                            <div class="voter-name-bold">
-                                <i class="fa-solid fa-user-check text-indigo-400"></i> ${v.name}
-                            </div>
-                            <div class="duty-badge-tag">${v.duty}</div>
-                        </div>
-                        <div class="voter-meta-row">
-                            <div><i class="fa-solid fa-location-dot text-pink-400"></i> স্থান: <strong>${v.place}</strong></div>
-                            <div><i class="fa-regular fa-calendar-check text-emerald-400"></i> তারিখ: <strong>${v.dates}</strong></div>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function submitTourVote() {
-            const nameInput = document.getElementById('voterName');
-            const name = nameInput.value.trim();
-
-            if (selectedDates.length === 0) {
-                alert("ক্যালেন্ডার থেকে অন্তত একটা দিন সিলেক্ট কর!");
-                return;
-            }
-            if (!chosenPlace) {
-                alert("কোথায় যেতে চাস, একটা জায়গা বেছে নে!");
-                return;
-            }
-            if (!chosenDuty) {
-                alert("ট্যুরের একটা দায়িত্ব তো বেছে নিবি মামা!");
-                return;
-            }
-            if (!name) {
-                alert("আরে বন্ধু, তোর নাম তো লিখবি আগে!");
-                return;
-            }
-
-            const formattedDates = selectedDates.map(d => toBanglaNum(d)).join(', ') + " ডিসেম্বর (" + toBanglaNum(selectedDates.length) + " দিন)";
-
-            votersData.unshift({
-                name: name,
-                place: chosenPlace,
-                duty: chosenDuty,
-                dates: formattedDates
-            });
-
-            localStorage.setItem('bachelor_tour_v8_money', JSON.stringify(votersData));
-
-            document.getElementById('ticketName').innerText = name;
-            document.getElementById('ticketPlace').innerText = chosenPlace;
-            document.getElementById('ticketDuty').innerText = chosenDuty;
-            document.getElementById('ticketDates').innerText = formattedDates;
-            document.getElementById('ticketView').style.display = 'block';
-
-            renderResults();
-
-            confetti({
-                particleCount: 110,
-                spread: 70,
-                origin: { y: 0.7 }
-            });
-
-            nameInput.value = '';
-        }
-
-        // ৫. লাইভ লটারি স্পিনার (টাকার অংক দিয়ে)
-        const wheelCanvas = document.getElementById('wheelCanvas');
-        const wheelCtx = wheelCanvas.getContext('2d');
-        const wheelRewards = ['5000 Taka', '10,000 Taka', '15000 Taka', '20,000 Taka', '50,000 Taka'];
-        const sliceColors = ['#10b981', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6'];
-        let wheelAngle = 0;
-        let spinning = false;
-
-        function drawWheel() {
-            const totalSlices = wheelRewards.length;
-            const sliceAngle = (2 * Math.PI) / totalSlices;
-            wheelCtx.clearRect(0, 0, 300, 300);
-
-            wheelRewards.forEach((reward, i) => {
-                const angle = wheelAngle + i * sliceAngle;
-                wheelCtx.fillStyle = sliceColors[i % sliceColors.length];
-
-                wheelCtx.beginPath();
-                wheelCtx.arc(150, 150, 140, angle, angle + sliceAngle);
-                wheelCtx.arc(150, 150, 28, angle + sliceAngle, angle, true);
-                wheelCtx.fill();
-
-                // টেক্সট ড্র
-                wheelCtx.save();
-                wheelCtx.fillStyle = "#ffffff";
-                wheelCtx.font = "bold 13px 'Hind Siliguri', 'Poppins', sans-serif";
-                wheelCtx.translate(150 + Math.cos(angle + sliceAngle / 2) * 85, 150 + Math.sin(angle + sliceAngle / 2) * 85);
-                wheelCtx.rotate(angle + sliceAngle / 2 + Math.PI / 2);
-                wheelCtx.fillText(reward, -wheelCtx.measureText(reward).width / 2, 0);
-                wheelCtx.restore();
-            });
-        }
-
-        function spinWheel() {
-            if (spinning) return;
-            spinning = true;
-            document.getElementById('winnerResult').innerText = "চাকা ঘুরছে... কপাল পরীক্ষা হচ্ছে!";
-
-            let duration = 3800;
-            let start = null;
-            const extraDegrees = Math.random() * 360 + 1800;
-
-            function animate(timestamp) {
-                if (!start) start = timestamp;
-                const progress = timestamp - start;
-                const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-                const currentProgress = Math.min(progress / duration, 1);
-
-                wheelAngle = (extraDegrees * (Math.PI / 180)) * easeOut(currentProgress);
-                drawWheel();
-
-                if (progress < duration) {
-                    requestAnimationFrame(animate);
-                } else {
-                    spinning = false;
-                    const totalSlices = wheelRewards.length;
-                    const sliceAngle = 360 / totalSlices;
-                    const normalized = ((wheelAngle * 180 / Math.PI) + 90) % 360;
-                    const winningIndex = Math.floor((360 - normalized) % 360 / sliceAngle);
-
-                    const winner = wheelRewards[winningIndex];
-                    document.getElementById('winnerResult').innerText = "🎉 মামা তুই পাইলি: " + winner + "! 💰";
-
-                    confetti({
-                        particleCount: 140,
-                        spread: 85,
-                        origin: { y: 0.6 }
-                    });
-                }
-            }
-            requestAnimationFrame(animate);
-        }
-
-        // ৬. শেয়ারিং
-        function shareMessenger() {
-            const currentUrl = window.location.href;
-            if (navigator.share) {
-                navigator.share({
-                    title: 'ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🔥',
-                    text: 'বন্ধু, অনেক হলো সংসার সাধন! ডিসেম্বরের ট্যুরের জন্য তারিখ, স্পট আর দায়িত্ব বেছে নে!',
-                    url: currentUrl
-                }).catch(() => {});
-            } else {
-                window.open('https://www.facebook.com/dialog/send?link=' + encodeURIComponent(currentUrl) + '&app_id=291494419107518&redirect_uri=' + encodeURIComponent(currentUrl), '_blank');
-            }
-        }
-
-        function copyTourLink() {
-            navigator.clipboard.writeText(window.location.href).then(() => {
-                alert("✅ লিংক কপি হইছে মামা! এবার মেসেঞ্জার গ্রুপে পেস্ট করে বন্ধুদের দে।");
-            });
-        }
-
-        // ৭. কাউন্টডাউন টাইমার
-        function updateCountdown() {
-            const targetDate = new Date("December 1, 2026 00:00:00").getTime();
-            const now = new Date().getTime();
-            const difference = targetDate - now;
-
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const mins = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const secs = Math.floor((difference % (1000 * 60)) / 1000);
-
-                document.getElementById('cdDays').innerText = toBanglaNum(days);
-                document.getElementById('cdHours').innerText = toBanglaNum(hours);
-                document.getElementById('cdMins').innerText = toBanglaNum(mins);
-                document.getElementById('cdSecs').innerText = toBanglaNum(secs);
-            }
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
-        // ইনিশিয়াল লোড
-        renderResults();
-        drawWheel();
-    </script>
+/* কাউন্টডাউন */
+const target = new Date('December 1, 2026 00:00:00').getTime();
+function tick() {
+  const d = Math.max(target - Date.now(), 0);
+  [Math.floor(d/864e5), Math.floor(d%864e5/36e5), Math.floor(d%36e5/6e4), Math.floor(d%6e4/1e3)].forEach((v, i) => $('cd' + i).textContent = bn(v));
+}
+setInterval(tick, 1000); tick(); draw();
+</script>
 </body>
 </html>
