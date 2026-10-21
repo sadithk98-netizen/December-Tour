@@ -3,187 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ - আলটিমেট প্ল্যানার</title>
-    <!-- Tailwind CSS & Google Fonts -->
-    <script src="https://jsdelivr.net"></script>
+    <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬</title>
+    <!-- FontAwesome Web Icons -->
     <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Confetti & AnimeJS Animation Engine -->
+    <!-- Canvas Confetti Extension -->
     <script src="https://jsdelivr.net"></script>
     
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Hind Siliguri', 'Poppins', sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-col: column;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px;
         }
-        /* Custom Modern Glassmorphism Cards */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+        
+        /* 📢 Top Announcement Neon Ticker */
+        .ticker-banner {
+            width: 100%;
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+            text-align: center;
+            padding: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 440px;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* ✨ Premium Cyber-Glass Cards */
+        .glass-box {
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        /* Glowing effects */
-        .glow-indigo:hover {
-            box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+        .glass-box:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
         }
-        .glow-amber {
-            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+
+        /* Logo Profile Structure */
+        .logo-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
-        .glow-amber:hover {
-            box-shadow: 0 0 30px rgba(245, 158, 11, 0.6);
+        .icon-wrapper {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            padding: 16px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
         }
-        /* Custom Premium Calendar Highlight */
-        .calendar-selected {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important;
-            color: white !important;
-            border-color: transparent !important;
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+        .logo-header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
         }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
+        .logo-header p {
+            font-size: 11px;
+            color: #818cf8;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
-        ::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.02);
+
+        /* 📅 Calendar Engine Styles */
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-b: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 8px;
         }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.15);
+        .calendar-wrapper {
+            background: rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+        .calendar-weekdays {
+            display: grid;
+            grid-template-cols: repeat(7, 1fr);
+            text-align: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-cols: repeat(7, 1fr);
+            gap: 6px;
+            text-align: center;
+        }
+        .day-cell {
+            padding: 10px 0;
+            font-size: 13px;
+            font-weight: 600;
+            color: #cbd5e1;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.02);
             border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
         }
-        /* Advanced Spinning Wheel Style */
+        .day-cell:hover {
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+        }
+        .day-cell.selected {
+            background: linear-gradient(135deg, #6366f1, #a855f7) !important;
+            color: #ffffff !important;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+            border-color: transparent;
+            transform: scale(1.05);
+        }
+        .counter-badge {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.03);
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 13px;
+            margin-top: 14px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .counter-number {
+            background: #6366f1;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        /* 🗳️ Poll Inputs & Discussion Layouts */
+        .input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .modern-input {
+            flex: 1;
+            background: rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 14px;
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 13px;
+            outline: none;
+            transition: all 0.2s;
+        }
+        .modern-input:focus {
+            border-color: #6366f1;
+        }
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 0 16px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-primary:hover { background: #4f46e5; }
+        
+        .poll-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 12px 16px;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            transition: all 0.2s;
+        }
+        .poll-item:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255,255,255,0.1);
+        }
+        .vote-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .vote-count {
+            font-size: 11px;
+            font-weight: 700;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        .btn-vote {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #cbd5e1;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .btn-vote:hover {
+            background: #6366f1;
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Discussion Chat Section */
+        .chat-container {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 16px;
+        }
+        .chat-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-h: 150px;
+            overflow-y: auto;
+            margin-top: 12px;
+            padding-right: 4px;
+        }
+        .chat-bubble {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.03);
+            padding: 10px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        .chat-user {
+            font-weight: 700;
+            color: #f59e0b;
+            margin-bottom: 2px;
+        }
+
+        /* 🎲 Spinning Lottery Wheel Elements */
+        .wheel-center-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
         .wheel-box {
             position: relative;
             width: 290px;
             height: 290px;
-        }
-        @media(min-width: 640px) {
-            .wheel-box { width: 340px; height: 340px; }
+            margin: 20px 0;
         }
         canvas#wheel {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 8px solid rgba(255, 255, 255, 0.05);
+            border: 5px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
             transition: transform 4.5s cubic-bezier(0.15, 0.85, 0.15, 1);
         }
         .wheel-pointer {
             position: absolute;
-            top: -14px;
+            top: -12px;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
             height: 0;
-            border-left: 18px solid transparent;
-            border-right: 18px solid transparent;
-            border-top: 28px solid #f43f5e;
-            filter: drop-shadow(0 0 10px rgba(244,63,94,0.6));
-            z-index: 20;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 25px solid #f43f5e;
+            filter: drop-shadow(0 0 8px rgba(244,63,94,0.6));
+            z-index: 50;
         }
-        .wheel-center {
+        .wheel-center-dot {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 44px;
-            height: 44px;
-            background: #1e1b4b;
-            border: 4px solid #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
-</head>
-<body class="min-h-screen text-slate-200 flex flex-col items-center antialiased selection:bg-indigo-500 selection:text-white">
-
-    <!-- 📢 PREMIUM TICKER / NOTICE BANNER -->
-    <div class="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-center py-3 px-4 shadow-xl sticky top-0 z-50 backdrop-blur-md flex items-center justify-center gap-2 border-b border-white/10">
-        <i class="fa-solid fa-fire text-amber-300 animate-bounce text-sm md:text-base"></i>
-        <span class="text-xs md:text-sm font-semibold tracking-wide">
-            BACHELOR TOUR 2026: নিজের ফ্রি ডেট ও পছন্দের স্পটে ভোট দাও! সিদ্ধান্ত হবে লাইভ লটারিতে! 🔥
-        </span>
-    </div>
-
-    <!-- MAIN INTERFACE CONTAINER -->
-    <div class="max-w-md w-full px-4 py-8 space-y-6 mb-16">
-        
-        <!-- LUXURIOUS LOGO / HEADER CARD -->
-        <div class="glass-card p-6 rounded-3xl flex items-center gap-4 transition-all duration-300 hover:border-white/15 relative overflow-hidden group">
-            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="bg-gradient-to-tr from-indigo-500 to-purple-600 text-white p-4 rounded-2xl shadow-lg shadow-indigo-500/30 transform group-hover:rotate-12 transition-transform duration-300">
-                <i class="fa-solid fa-campground text-2xl"></i>
-            </div>
-            <div>
-                <h1 class="text-2xl font-bold text-white tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-200 bg-clip-text">ব্যাচেলর ট্যুর ২০২৬</h1>
-                <p class="text-xs font-semibold tracking-widest text-indigo-400 uppercase mt-0.5">Ultimate Group Decision Hub</p>
-            </div>
-        </div>
-
-        <!-- 📅 INTERACTIVE CALENDAR SECTION -->
-        <div class="glass-card p-6 rounded-3xl space-y-4 transition-all duration-300 hover:border-white/15">
-            <div class="flex items-center justify-between border-b border-white/5 pb-3">
-                <h2 class="text-sm md:text-base font-bold text-white flex items-center gap-2">
-                    <i class="fa-regular fa-calendar-check text-indigo-400"></i> ডিসেম্বরের সম্ভাব্য ডেট বেছে নাও
-                </h2>
-                <span class="text-[11px] bg-indigo-500/10 text-indigo-300 font-bold px-2.5 py-1 rounded-full border border-indigo-500/20 uppercase tracking-wider">Dec 2026</span>
-            </div>
-            
-            <p class="text-xs text-slate-400 leading-relaxed">তুমি যে দিনগুলোতে ফ্রি আছো বা ট্যুর করতে চাও, ক্যালেন্ডারের সেই তারিখগুলো টাচ করো:</p>
-            
-            <!-- Calendar Grid Structure -->
-            <div class="bg-black/20 p-4 rounded-2xl border border-white/5">
-                <div class="grid grid-cols-7 gap-1 text-center text-[11px] font-bold text-slate-500 mb-3 uppercase tracking-wider">
-                    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
-                </div>
-                <!-- Dec 2026 starts on a Tuesday (Offset: 2 blocks empty) -->
-                <div class="grid grid-cols-7 gap-1.5 text-center" id="calendarGrid">
-                    <div class="py-2.5"></div>
-                    <div class="py-2.5"></div>
-                </div>
-            </div>
-            
-            <!-- Selected days dynamic alert badge -->
-            <div class="bg-white/5 px-4 py-3 rounded-xl border border-white/5 flex justify-between items-center text-xs">
-                <span class="text-slate-400">তোমার সিলেক্ট করা সর্বমোট দিন:</span>
-                <span id="selectedDaysCount" class="font-bold text-white bg-indigo-600 px-3 py-1 rounded-lg shadow-md transition-all duration-300">০ দিন</span>
-            </div>
-        </div>
-
-        <!-- 🗳️ PREMIUM POLL & DISCUSSION SECTION -->
-        <div class="glass-card p-6 rounded-3xl space-y-5 transition-all duration-300 hover:border-white/15">
-            <h2 class="text-sm md:text-base font-bold text-white flex items-center gap-2 border-b border-white/5 pb-3">
-                <i class="fa-solid fa-square-poll-vertical text-purple-400"></i> পছন্দের ট্রাভেল স্পটে ভোট দাও
-            </h2>
-
-            <!-- Animated Add Custom Option Box -->
-            <div class="flex gap-2">
-                <input type="text" id="newPlaceInput" placeholder="যেখানে ইচ্ছা / নতুন কোনো আকর্ষণীয় স্পট..." class="flex-1 bg-black/20 text-white placeholder-slate-500 px-4 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-xs transition-all">
-                <button onclick="addCustomPlace()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 shadow-md shadow-indigo-600/20 cursor-pointer glow-indigo">
-                    <i class="fa-solid fa-plus mr-1"></i> অ্যাড করো
-                </button>
-            </div>
-
-            <!-- Injected Dynamic Poll Options List -->
-            <div id="voteList" class="space-y-3 pt-1">
-                <!-- Dynamically Populated with stunning hover styles -->
-            </div>
-
-            <!-- Live Chat / Thread Comments Board -->
-            <div class="border-t border-white/5 pt-4 mt-2 space-y-3">
-                <h3 class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
-                    <i class="fa-regular fa-comments text-purple-400"></i> গ্রুপ লাইভ ডিসকাশন বোর্ড:
-                </h3>
-                
-                <div class="flex gap-2">
-                    <input type="text" id="commentInput" placeholder="গ্রুপে তোমার মতামত শেয়ার করো..." class="flex-1 bg-black/20 text-white placeholder-slate-500 px-4 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-purple-500 text-xs transition-all">
-                    <button onclick="postComment()" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 cursor-pointer">
-                        <i class="fa-regular fa-paper-plane"></i>
-                    </button>
