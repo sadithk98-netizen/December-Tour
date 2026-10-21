@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- একদম স্পষ্ট বাংলা সংখ্যার জন্য Noto Sans Bengali ও Hind Siliguri -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- কনফেটি স্ক্রিপ্ট -->
@@ -91,10 +90,10 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
         }
 
-        /* 🔥 হিরো টাইটেল ও ইমোশনাল বক্স */
+        /* 🔥 হিরো টাইটেল ও ছবি ফ্রেম */
         .hero-box {
             text-align: center;
-            padding: 26px 20px;
+            padding: 22px 18px;
         }
         .badge-pill {
             display: inline-flex;
@@ -110,7 +109,7 @@
             margin-bottom: 14px;
         }
         .hero-title {
-            font-size: 25px;
+            font-size: 24px;
             font-weight: 800;
             line-height: 1.4;
             color: #ffffff;
@@ -121,6 +120,38 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* 📸 ফটো ফ্রেম স্টাইল */
+        .photo-frame-box {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            margin: 14px 0;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+        .photo-frame-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .photo-frame-box:hover img {
+            transform: scale(1.03);
+        }
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(9, 13, 22, 0.95), transparent);
+            padding: 24px 12px 10px;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #fbbf24;
+            text-align: center;
+        }
+
         .hero-sub {
             font-size: 13.5px;
             color: #cbd5e1;
@@ -131,6 +162,7 @@
             padding: 16px;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 14px;
         }
 
         .section-header {
@@ -482,12 +514,12 @@
 
     <!-- শীর্ষ টিকার -->
     <div class="top-ticker">
-        🔥 <span>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬</span> 
+        🔥 <span>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬</span> — কোনো বাহানা চলবে না রে ভাই!
     </div>
 
     <div class="main-wrapper">
 
-        <!-- 🔥 সুপার ইমোশনাল ও জোশ হিরো বক্স -->
+        <!-- 🔥 সুপার ইমোশনাল ও স্মৃতি রোমন্থন হিরো বক্স (ছবির ফ্রেম সহ) -->
         <div class="glass-card hero-box">
             <div class="badge-pill">
                 <i class="fa-solid fa-triangle-exclamation"></i> কোনো বাহানা চলবে না
@@ -497,10 +529,18 @@
                 <span class="highlight">বন্ধুরা, এবার হবে শতাব্দীর সেরা পাগল করা ট্যুর</span> 🎒🚌
             </h1>
 
+            <!-- 📸 বন্ধুদের স্মৃতিময় গ্রুপ ফটো ফ্রেম -->
+            <div class="photo-frame-box">
+                <img src="cover.jpg" alt="ট্যুরের স্মৃতি" onerror="this.src='https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=800&auto=format&fit=crop'">
+                <div class="photo-caption">
+                    🏊‍♂️ সেই পাগলামি মনে পড়ে মামা? এবার হবে আরও বড় ধামাকা!
+                </div>
+            </div>
+
             <div class="hero-sub">
                 "বন্ধুরা, অনেক তো হলো সংসার সাধন আর দায়িত্বের ঘানি টানা! জীবনের অর্ধেকটা সময় তো পরিবার, ক্যারিয়ার আর সমাজের নিয়ম মানতেই পার হয়ে গেল রে ভাই। বয়স বাড়ছে, ব্যস্ততা বাড়ছে—এবার নিজের জন্য নিজেকে একটু সময় দেওয়ার পালা।
                 <br><br>
-                সব পিছুটান ভুলে চল সবাই মিলে হারিয়ে যাই কোনো দূর অজানায়। 
+                শেষবারের মতো সব পিছুটান ভুলে চল সবাই মিলে হারিয়ে যাই কোনো দূর অজানায়। সারারাত ক্যাম্পফায়ার, বারবিকিউ, পুরোনো দিনের গান আর বুকভরা আড্ডা।
                 <br><br>
                 ক্যালেন্ডারে তোর সুবিধাজনক দিনগুলোতে সিল মার, স্পট বেছে নে আর ট্যুরের দায়িত্ব কাঁধে তুলে নে। দেখা যাক কপাল কার সাথে কথা কয়!"
             </div>
@@ -573,11 +613,11 @@
 
             <div class="selection-list" id="dutyOptionsList">
                 <div class="select-card duty-card" onclick="selectDuty('👑 ট্যুর ম্যানেজার (প্ল্যানিং ও বুকিং)')">
-                    <span>👑 ট্যুর ম্যানেজার </span>
+                    <span>👑 ট্যুর ম্যানেজার (প্ল্যানিং ও বুকিং)</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
                 <div class="select-card duty-card" onclick="selectDuty('💰 হিসাবরক্ষক / ক্যাশিয়ার (টাকার হিসাব)')">
-                    <span>💰 হিসাবরক্ষক </span>
+                    <span>💰 হিসাবরক্ষক / ক্যাশিয়ার (টাকার হিসাব)</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
                 <div class="select-card duty-card" onclick="selectDuty('🧭 গাইড ও স্পট এক্সপ্লোরার')">
@@ -585,15 +625,15 @@
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
                 <div class="select-card duty-card" onclick="selectDuty('🍖 বারবিকিউ ও খাবার স্পেশালিস্ট')">
-                    <span>🍖 খাবার স্পেশালিস্ট</span>
+                    <span>🍖 বারবিকিউ ও খাবার স্পেশালিস্ট</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
                 <div class="select-card duty-card" onclick="selectDuty('📸 ফটোগ্রাফার ও রিলস মেকার')">
-                    <span>📸 ফটোগ্রাফার </span>
+                    <span>📸 ফটোগ্রাফার ও রিলস মেকার</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
                 <div class="select-card duty-card" onclick="selectDuty('🎸 বিনোদন ও ডিজে স্পেশালিস্ট')">
-                    <span>🎸 বিনোদন </span>
+                    <span>🎸 বিনোদন ও ডিজে স্পেশালিস্ট</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
                 <div class="select-card duty-card" onclick="selectDuty('😎 কোনো কাজ নাই, শুধু চিল')">
@@ -718,10 +758,9 @@
         const selectedDaysText = document.getElementById('selectedDaysText');
         let selectedDates = [];
 
-        // ১ ডিসেম্বর ২০২৬ মঙ্গলবার (Tuesday = index 2 -> 2 empty cells)
-        const emptyCells = 2;
+        const emptyCells = 2; // ১ ডিসেম্বর ২০২৬ মঙ্গলবার
         const totalMonthDays = 31;
-        const holidayDates = [16, 25]; // ১৬ বিজয় দিবস, ২৫ বড়দিন
+        const holidayDates = [16, 25];
 
         for (let i = 0; i < emptyCells; i++) {
             const empty = document.createElement('div');
@@ -778,10 +817,9 @@
         }
 
         // ৪. ফলাফল ও ভোট হ্যান্ডলার
-        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_v4_detailed')) || [];
+        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_v5_final')) || [];
 
         function renderResults() {
-            // প্রোগ্রেস বার তৈরি
             const allSpots = ['সুন্দরবন 🐅', 'বান্দরবান ⛰️', 'রাঙ্গামাটি 🏞️', 'সেন্টমার্টিন 🌊', 'যেখানে খুশি 📍'];
             const spotCounts = {};
             allSpots.forEach(s => spotCounts[s] = 0);
@@ -810,7 +848,6 @@
                 `;
             });
 
-            // বিস্তারিত ভোটারদের তালিকা রেন্ডার
             const container = document.getElementById('votersListContainer');
             container.innerHTML = '';
             
@@ -871,9 +908,8 @@
                 dates: formattedDates
             });
 
-            localStorage.setItem('bachelor_tour_v4_detailed', JSON.stringify(votersData));
+            localStorage.setItem('bachelor_tour_v5_final', JSON.stringify(votersData));
 
-            // টিকেট আপডেট
             document.getElementById('ticketName').innerText = name;
             document.getElementById('ticketPlace').innerText = chosenPlace;
             document.getElementById('ticketDuty').innerText = chosenDuty;
@@ -983,7 +1019,7 @@
             });
         }
 
-        // ৭. লাইভ কাউন্টডাউন টাইমার (ডিসেম্বর ১, ২০২৬)
+        // ৭. লাইভ কাউন্টডাউন টাইমার
         function updateCountdown() {
             const targetDate = new Date("December 1, 2026 00:00:00").getTime();
             const now = new Date().getTime();
