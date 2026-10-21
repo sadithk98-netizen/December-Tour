@@ -1,319 +1,230 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬</title>
-    <!-- FontAwesome Web Icons -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Canvas Confetti Extension -->
-    <script src="https://jsdelivr.net"></script>
-    
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
-            color: #f1f5f9;
-            min-height: 100vh;
-            display: flex;
-            flex-col: column;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 50px;
-        }
-        
-        /* 📢 Top Announcement Neon Ticker */
-        .ticker-banner {
-            width: 100%;
-            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
-            text-align: center;
-            padding: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🎒🚌</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Hind Siliguri', sans-serif; }
+    .wheel-pointer {
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 25px solid #ef4444;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 pb-12 antialiased">
 
-        .main-container {
-            width: 100%;
-            max-width: 440px;
-            padding: 20px 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+  <!-- টপ ব্যানার -->
+  <div class="bg-gradient-to-r from-teal-700 to-emerald-800 text-white py-8 px-4 text-center shadow-md">
+    <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">অফিসিয়াল প্ল্যানিং</span>
+    <h1 class="text-2xl sm:text-4xl font-extrabold mt-3">ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬! 🎒🚌</h1>
+    <p class="text-teal-100 mt-2 text-sm sm:text-base max-w-md mx-auto">
+      কোথায় যাব আমরা? সিদ্ধান্ত হবে সবার ভোটে আর চূড়ান্ত স্পট নির্ধারণ হবে লাইভ লটারিতে!
+    </p>
+  </div>
 
-        /* ✨ Premium Cyber-Glass Cards */
-        .glass-box {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .glass-box:hover {
-            border-color: rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.06);
-            transform: translateY(-2px);
-        }
+  <div class="max-w-xl mx-auto px-4 mt-6 space-y-6">
 
-        /* Logo Profile Structure */
-        .logo-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .icon-wrapper {
-            background: linear-gradient(135deg, #6366f1, #a855f7);
-            padding: 16px;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
-        }
-        .logo-header h1 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #ffffff;
-        }
-        .logo-header p {
-            font-size: 11px;
-            color: #818cf8;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
+    <!-- নোটিশ বোর্ড -->
+    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+      <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2 mb-2">
+        📢 ট্যুর ইনফো ও নিয়মাবলী
+      </h2>
+      <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+        <li>কোনো সাইন-আপ ছাড়াই পোলে নিজের পছন্দের জায়গায় ভোট দাও।</li>
+        <li>লিস্টে নাম না থাকলে নিজে অপশন যোগ করতে পারো।</li>
+        <li>ভোট শেষে শীর্ষ স্থানগুলো নিয়ে নিচে <strong>লাইভ লটারি হুইল</strong> ঘোরানো হবে।</li>
+      </ul>
+    </div>
 
-        /* 📅 Calendar Engine Styles */
-        .section-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-b: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 8px;
-        }
-        .calendar-wrapper {
-            background: rgba(0,0,0,0.25);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 16px;
-            border-radius: 16px;
-            margin-top: 12px;
-        }
-        .calendar-weekdays {
-            display: grid;
-            grid-template-cols: repeat(7, 1fr);
-            text-align: center;
-            font-size: 11px;
-            font-weight: 700;
-            color: #64748b;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        .calendar-grid {
-            display: grid;
-            grid-template-cols: repeat(7, 1fr);
-            gap: 6px;
-            text-align: center;
-        }
-        .day-cell {
-            padding: 10px 0;
-            font-size: 13px;
-            font-weight: 600;
-            color: #cbd5e1;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.02);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            user-select: none;
-        }
-        .day-cell:hover {
-            background: rgba(255,255,255,0.1);
-            color: #ffffff;
-        }
-        .day-cell.selected {
-            background: linear-gradient(135deg, #6366f1, #a855f7) !important;
-            color: #ffffff !important;
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
-            border-color: transparent;
-            transform: scale(1.05);
-        }
-        .counter-badge {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255,255,255,0.03);
-            padding: 12px 16px;
-            border-radius: 12px;
-            font-size: 13px;
-            margin-top: 14px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .counter-number {
-            background: #6366f1;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-weight: 700;
-        }
+    <!-- ডিসেম্বর ২০২৬ ক্যালেন্ডার -->
+    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+          📅 ডিসেম্বর ২০২৬
+        </h2>
+        <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">৩১ দিন</span>
+      </div>
 
-        /* 🗳️ Poll Inputs & Discussion Layouts */
-        .input-group {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-        .modern-input {
-            flex: 1;
-            background: rgba(0,0,0,0.25);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 12px 14px;
-            border-radius: 12px;
-            color: #ffffff;
-            font-size: 13px;
-            outline: none;
-            transition: all 0.2s;
-        }
-        .modern-input:focus {
-            border-color: #6366f1;
-        }
-        .btn-primary {
-            background: #6366f1;
-            color: white;
-            border: none;
-            padding: 0 16px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .btn-primary:hover { background: #4f46e5; }
-        
-        .poll-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 12px 16px;
-            border-radius: 14px;
-            margin-bottom: 10px;
-            transition: all 0.2s;
-        }
-        .poll-item:hover {
-            background: rgba(255,255,255,0.07);
-            border-color: rgba(255,255,255,0.1);
-        }
-        .vote-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .vote-count {
-            font-size: 11px;
-            font-weight: 700;
-            background: rgba(99, 102, 241, 0.15);
-            color: #a5b4fc;
-            padding: 4px 10px;
-            border-radius: 20px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-        .btn-vote {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #cbd5e1;
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-        }
-        .btn-vote:hover {
-            background: #6366f1;
-            color: white;
-            border-color: transparent;
-        }
+      <!-- ক্যালেন্ডার বার -->
+      <div class="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-slate-400 mb-2">
+        <span>শনি</span>
+        <span class="text-red-500">রবি</span>
+        <span>সোম</span>
+        <span>মঙ্গল</span>
+        <span>বুধ</span>
+        <span>বৃহ</span>
+        <span class="text-red-500">শুক্র</span>
+      </div>
 
-        /* Discussion Chat Section */
-        .chat-container {
-            margin-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 16px;
-        }
-        .chat-feed {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-h: 150px;
-            overflow-y: auto;
-            margin-top: 12px;
-            padding-right: 4px;
-        }
-        .chat-bubble {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.03);
-            padding: 10px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-        }
-        .chat-user {
-            font-weight: 700;
-            color: #f59e0b;
-            margin-bottom: 2px;
-        }
+      <!-- দিনসমূহ (ডিসেম্বর ২০২৬ শুরু হয়েছে মঙ্গলবার থেকে) -->
+      <div class="grid grid-cols-7 gap-1.5 text-center text-xs sm:text-sm font-medium">
+        <span class="p-2 text-slate-200">-</span>
+        <span class="p-2 text-slate-200">-</span>
+        <span class="p-2 text-slate-200">-</span>
+        <span class="p-2 bg-slate-50 rounded-lg">১</span>
+        <span class="p-2 bg-slate-50 rounded-lg">২</span>
+        <span class="p-2 bg-slate-50 rounded-lg">৩</span>
+        <span class="p-2 bg-red-50 text-red-600 font-bold rounded-lg">৪</span>
 
-        /* 🎲 Spinning Lottery Wheel Elements */
-        .wheel-center-layout {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-        .wheel-box {
-            position: relative;
-            width: 290px;
-            height: 290px;
-            margin: 20px 0;
-        }
-        canvas#wheel {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.1);
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
-            transition: transform 4.5s cubic-bezier(0.15, 0.85, 0.15, 1);
-        }
-        .wheel-pointer {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            border-top: 25px solid #f43f5e;
-            filter: drop-shadow(0 0 8px rgba(244,63,94,0.6));
-            z-index: 50;
-        }
-        .wheel-center-dot {
-            position: absolute;
+        <span class="p-2 bg-slate-50 rounded-lg">৫</span>
+        <span class="p-2 bg-red-50 text-red-500 rounded-lg">৬</span>
+        <span class="p-2 bg-slate-50 rounded-lg">৭</span>
+        <span class="p-2 bg-slate-50 rounded-lg">৮</span>
+        <span class="p-2 bg-slate-50 rounded-lg">৯</span>
+        <span class="p-2 bg-slate-50 rounded-lg">১০</span>
+        <span class="p-2 bg-red-50 text-red-600 font-bold rounded-lg">১১</span>
+
+        <span class="p-2 bg-slate-50 rounded-lg">১২</span>
+        <span class="p-2 bg-red-50 text-red-500 rounded-lg">১৩</span>
+        <span class="p-2 bg-slate-50 rounded-lg">১৪</span>
+        <span class="p-2 bg-slate-50 rounded-lg">১৫</span>
+        <span class="p-2 bg-emerald-100 text-emerald-800 font-bold rounded-lg ring-1 ring-emerald-400" title="বিজয় দিবস">১৬</span>
+        <span class="p-2 bg-slate-50 rounded-lg">১৭</span>
+        <span class="p-2 bg-red-50 text-red-600 font-bold rounded-lg">১৮</span>
+
+        <span class="p-2 bg-slate-50 rounded-lg">১৯</span>
+        <span class="p-2 bg-red-50 text-red-500 rounded-lg">২০</span>
+        <span class="p-2 bg-slate-50 rounded-lg">২১</span>
+        <span class="p-2 bg-slate-50 rounded-lg">২২</span>
+        <span class="p-2 bg-slate-50 rounded-lg">২৩</span>
+        <span class="p-2 bg-slate-50 rounded-lg">২৪</span>
+        <span class="p-2 bg-amber-100 text-amber-800 font-bold rounded-lg ring-1 ring-amber-400" title="বড়দিন">২৫</span>
+
+        <span class="p-2 bg-slate-50 rounded-lg">২৬</span>
+        <span class="p-2 bg-red-50 text-red-500 rounded-lg">২৭</span>
+        <span class="p-2 bg-slate-50 rounded-lg">২৮</span>
+        <span class="p-2 bg-slate-50 rounded-lg">২৯</span>
+        <span class="p-2 bg-slate-50 rounded-lg">৩০</span>
+        <span class="p-2 bg-indigo-100 text-indigo-800 font-bold rounded-lg ring-1 ring-indigo-400" title="নিউ ইয়ার ইভ">৩১</span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-4 text-[11px] text-slate-500">
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 bg-emerald-400 rounded-full"></span> ১৬ ডিসে (বিজয় দিবস)</span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 bg-amber-400 rounded-full"></span> ২৫ ডিসে (ছুটি)</span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 bg-indigo-400 rounded-full"></span> ৩১ ডিসে (থার্টি ফার্স্ট)</span>
+      </div>
+    </div>
+
+    <!-- পোল সেকশন (StrawPoll Embed) -->
+    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+      <h2 class="text-lg font-bold text-slate-900 mb-1">🗳️ লাইভ পোল (ভোট দাও)</h2>
+      <p class="text-xs text-slate-500 mb-4">লগইন ছাড়া ভোট দেওয়া যাবে এবং যে কেউ নতুন স্পট যোগ করতে পারবে।</p>
+      
+      <!-- নিচের src লিংকে আপনার StrawPoll-এর লিংক বসিয়ে নেবেন -->
+      <div class="rounded-xl overflow-hidden border border-slate-100 bg-slate-50">
+        <iframe src="https://strawpoll.com/embed/" style="width: 100%; height: 440px; border: none;" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- ইন-বিল্ট স্পিনিং হুইল (লটারি) -->
+    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center">
+      <h2 class="text-lg font-bold text-slate-900 mb-1">🎡 লাইভ লটারি স্পিনার</h2>
+      <p class="text-xs text-slate-500 mb-4">চাকা ঘুরিয়ে বিজয়ী স্পট বেছে নাও!</p>
+
+      <div class="relative flex flex-col items-center justify-center">
+        <!-- পয়েন্টার -->
+        <div class="wheel-pointer -mb-2 z-10"></div>
+        <!-- ক্যানভাস চাকা -->
+        <canvas id="wheelCanvas" width="300" height="300" class="max-w-full rounded-full shadow-inner"></canvas>
+      </div>
+
+      <div class="mt-5">
+        <button id="spinBtn" class="bg-teal-700 hover:bg-teal-800 active:scale-95 text-white font-bold px-6 py-2.5 rounded-full shadow-md transition-all">
+          🎰 স্পিন করো!
+        </button>
+      </div>
+      <p id="winnerDisplay" class="mt-3 font-bold text-emerald-600 text-base h-6"></p>
+    </div>
+
+  </div>
+
+  <!-- স্পিন হুইল জাভাস্ক্রিপ্ট -->
+  <script>
+    const spots = ['বান্দরবান ⛰️', 'রাঙ্গামাটি 🏞️', 'সুন্দরবন 🐅', 'সেন্টমার্টিন 🌊', 'কক্সবাজার 🏖️', 'সিলেট 🍃'];
+    const colors = ['#0d9488', '#f59e0b', '#3b82f6', '#ec4899', '#8b5cf6', '#10b981'];
+
+    const canvas = document.getElementById('wheelCanvas');
+    const ctx = canvas.getContext('2d');
+    const spinBtn = document.getElementById('spinBtn');
+    const winnerDisplay = document.getElementById('winnerDisplay');
+
+    let startAngle = 0;
+    const arc = Math.PI / (spots.length / 2);
+    let spinTimeout = null;
+    let spinAngleStart = 10;
+    let spinTime = 0;
+    let spinTimeTotal = 0;
+
+    function drawRouletteWheel() {
+      ctx.clearRect(0, 0, 300, 300);
+      const outsideRadius = 140;
+      const textRadius = 90;
+      const insideRadius = 30;
+
+      for (let i = 0; i < spots.length; i++) {
+        const angle = startAngle + i * arc;
+        ctx.fillStyle = colors[i % colors.length];
+
+        ctx.beginPath();
+        ctx.arc(150, 150, outsideRadius, angle, angle + arc, false);
+        ctx.arc(150, 150, insideRadius, angle + arc, angle, true);
+        ctx.fill();
+
+        ctx.save();
+        ctx.fillStyle = "white";
+        ctx.font = "bold 13px 'Hind Siliguri', sans-serif";
+        ctx.translate(150 + Math.cos(angle + arc / 2) * textRadius, 
+                      150 + Math.sin(angle + arc / 2) * textRadius);
+        ctx.rotate(angle + arc / 2 + Math.PI / 2);
+        const text = spots[i];
+        ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+        ctx.restore();
+      }
+    }
+
+    function rotateWheel() {
+      spinTime += 30;
+      if (spinTime >= spinTimeTotal) {
+        stopRotateWheel();
+        return;
+      }
+      const spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+      startAngle += (spinAngle * Math.PI / 180);
+      drawRouletteWheel();
+      spinTimeout = requestAnimationFrame(rotateWheel);
+    }
+
+    function stopRotateWheel() {
+      const degrees = startAngle * 180 / Math.PI + 90;
+      const arcd = arc * 180 / Math.PI;
+      const index = Math.floor((360 - degrees % 360) / arcd);
+      winnerDisplay.innerText = "🎉 বিজয়ী স্পট: " + spots[index] + "!";
+      spinBtn.disabled = false;
+    }
+
+    function easeOut(t, b, c, d) {
+      const ts = (t /= d) * t;
+      const tc = ts * t;
+      return b + c * (tc + -3 * ts + 3 * t);
+    }
+
+    spinBtn.addEventListener('click', () => {
+      spinBtn.disabled = true;
+      winnerDisplay.innerText = "লটারি ঘুরছে...";
+      spinAngleStart = Math.random() * 15 + 25;
+      spinTime = 0;
+      spinTimeTotal = Math.random() * 2000 + 3500;
+      rotateWheel();
+    });
+
+    drawRouletteWheel();
+  </script>
+</body>
+</html>
