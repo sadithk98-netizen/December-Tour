@@ -24,7 +24,7 @@
         }
 
         body {
-            background: #0b0f19;
+            background: #090d16;
             color: #f1f5f9;
             min-height: 100vh;
             display: flex;
@@ -32,33 +32,33 @@
             align-items: center;
             overflow-x: hidden;
             position: relative;
-            padding-bottom: 70px;
+            padding-bottom: 80px;
         }
 
-        /* 🌌 ফ্রেশ ও সফট ব্যাকগ্রাউন্ড অরবস (চোখে লাগবে না) */
+        /* 🌌 সফট প্রিমিয়াম ব্যাকগ্রাউন্ড অরবস */
         .bg-glow {
             position: fixed;
-            width: 380px;
-            height: 380px;
+            width: 360px;
+            height: 360px;
             border-radius: 50%;
             filter: blur(120px);
             z-index: -1;
             pointer-events: none;
-            opacity: 0.25;
+            opacity: 0.22;
         }
-        .glow-left { background: #4f46e5; top: -80px; left: -100px; }
-        .glow-right { background: #9333ea; bottom: 80px; right: -100px; }
+        .glow-left { background: #4f46e5; top: -60px; left: -80px; }
+        .glow-right { background: #ec4899; bottom: 120px; right: -80px; }
 
-        /* 📢 সফট প্রিমিয়াম টিকার */
+        /* 📢 শীর্ষ টিকার */
         .top-ticker {
             width: 100%;
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
             padding: 10px 16px;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
             color: #cbd5e1;
             position: sticky;
             top: 0;
@@ -66,7 +66,6 @@
         }
         .top-ticker span {
             color: #fbbf24;
-            font-weight: 700;
         }
 
         .main-wrapper {
@@ -80,17 +79,17 @@
 
         /* 💎 প্রিমিয়াম ৩ডি ফ্রস্টেড গ্লাস কার্ড */
         .glass-card {
-            background: rgba(22, 29, 47, 0.65);
+            background: rgba(22, 29, 47, 0.7);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
             border-radius: 24px;
             padding: 22px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
         }
 
-        /* 🔥 হিরো টাইটেল ও ইমোশনাল বর্ণনা */
+        /* 🔥 হিরো টাইটেল ও ইমোশনাল বক্স */
         .hero-box {
             text-align: center;
             padding: 26px 20px;
@@ -99,9 +98,9 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: #a5b4fc;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #fca5a5;
             padding: 5px 14px;
             border-radius: 50px;
             font-size: 12px;
@@ -113,21 +112,23 @@
             font-weight: 800;
             line-height: 1.35;
             color: #ffffff;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .hero-title .highlight {
-            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+            background: linear-gradient(135deg, #fbbf24 0%, #f43f5e 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hero-title .emoji {
-            -webkit-text-fill-color: initial !important;
-            display: inline-block;
-        }
         .hero-sub {
             font-size: 13.5px;
-            color: #94a3b8;
-            line-height: 1.7;
+            color: #cbd5e1;
+            line-height: 1.75;
+            text-align: justify;
+            text-align-last: center;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 16px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .section-header {
@@ -142,7 +143,7 @@
             padding-bottom: 10px;
         }
 
-        /* 📅 ৩ডি ক্যালেন্ডার গ্রিড */
+        /* 📅 ৩ডি ক্যালেন্ডার */
         .calendar-weekdays {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -189,12 +190,12 @@
             font-weight: 800;
         }
 
-        /* 📍 স্পট অপশন চয়েস (৩ডি কার্ড) */
+        /* 📍 স্পট অপশন ও পারফেক্ট বৃত্ত পূরণ */
         .place-options {
             display: flex;
             flex-direction: column;
-            gap: 9px;
-            margin-bottom: 16px;
+            gap: 10px;
+            margin-bottom: 18px;
         }
         .place-item {
             display: flex;
@@ -202,7 +203,7 @@
             justify-content: space-between;
             background: rgba(255, 255, 255, 0.03);
             border: 1.5px solid rgba(255, 255, 255, 0.06);
-            padding: 13px 18px;
+            padding: 14px 18px;
             border-radius: 16px;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -213,14 +214,16 @@
         }
         .place-item.active {
             background: rgba(99, 102, 241, 0.15);
-            border-color: #818cf8;
+            border-color: #6366f1;
             box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
         }
         .place-item span {
             font-size: 15px;
             font-weight: 600;
         }
-        .place-check {
+
+        /* 🔘 ডানপাশের রেডিও বৃত্ত এনিমেশন */
+        .place-circle {
             width: 22px;
             height: 22px;
             border-radius: 50%;
@@ -228,13 +231,49 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 11px;
-            color: transparent;
+            transition: all 0.2s ease;
         }
-        .place-item.active .place-check {
-            background: #6366f1;
+        .circle-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: transparent;
+            transition: all 0.2s ease;
+        }
+        .place-item.active .place-circle {
             border-color: #6366f1;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+        .place-item.active .circle-dot {
+            background: #6366f1;
+        }
+
+        /* 👑 দায়িত্ব নির্বাচন চিপস */
+        .role-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .role-chip {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .role-chip:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .role-chip.active {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-color: #34d399;
             color: #ffffff;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
         /* ✍️ ৩ডি ইনপুট ও সাবমিট বাটন */
@@ -272,7 +311,6 @@
         .btn-3d:active {
             transform: translateY(3px);
             border-bottom-width: 1px;
-            box-shadow: 0 2px 10px rgba(79, 70, 229, 0.2);
         }
 
         /* 🎫 ইউজারের লাইভ কনফার্মেশন টিকেট */
@@ -290,7 +328,35 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 📋 এখন পর্যন্ত ফলাফল তালিকা */
+        /* 📊 ফলাফল স্ট্যাটাস বার */
+        .stat-bar-container {
+            margin-bottom: 14px;
+        }
+        .stat-item {
+            margin-bottom: 9px;
+        }
+        .stat-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 4px;
+        }
+        .bar-bg {
+            height: 7px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        /* 📋 ভোটারদের তালিকা কার্ড */
         .voter-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -305,6 +371,9 @@
             font-size: 14px;
             font-weight: 700;
             color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         .voter-details {
             font-size: 12px;
@@ -315,9 +384,19 @@
             background: rgba(99, 102, 241, 0.12);
             border: 1px solid rgba(99, 102, 241, 0.25);
             color: #a5b4fc;
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 10px;
             font-size: 12px;
+            font-weight: 600;
+            text-align: right;
+        }
+        .role-badge {
+            font-size: 10px;
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 2px 7px;
+            border-radius: 20px;
             font-weight: 600;
         }
 
@@ -382,35 +461,70 @@
             transform: translateY(2px);
             border-bottom-width: 1px;
         }
+
+        /* ⏳ কাউন্টডাউন ওয়ার্নিং বক্স */
+        .countdown-card {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(168, 85, 247, 0.1));
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .countdown-unit {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 12px;
+            min-width: 58px;
+        }
+        .countdown-num {
+            font-size: 20px;
+            font-weight: 800;
+            color: #fbbf24;
+        }
+        .countdown-label {
+            font-size: 10px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
 
-    <!-- সফট আই-সুদিং ব্যাকগ্রাউন্ড অরবস -->
+    <!-- ব্যাকগ্রাউন্ড অরবস -->
     <div class="bg-glow glow-left"></div>
     <div class="bg-glow glow-right"></div>
 
     <!-- শীর্ষ টিকার -->
     <div class="top-ticker">
-        🔥 <span>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬</span> — আর কোনো বাহানা চলবে না রে ভাই!
+        🔥 <span>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬</span> — কোনো বাহানা চলবে না রে ভাই!
     </div>
 
     <div class="main-wrapper">
 
-        <!-- 🔥 ইমোশনাল ও জোশ হিরো টাইটেল -->
+        <!-- 🔥 সুপার ইমোশনাল ও জোশ হিরো বক্স -->
         <div class="glass-card hero-box">
             <div class="badge-pill">
-                <i class="fa-solid fa-fire text-amber-400"></i> ব্যাচেলর লাইফের সেরা স্মৃতি
+                <i class="fa-solid fa-triangle-exclamation"></i> আর কোনো বাহানা চলবে না!
             </div>
             
             <h1 class="hero-title">
-                <span class="highlight">বন্ধু, এবার হবে খেলা!</span> 
-                <span class="emoji">🎒</span><span class="emoji">🚌</span>
+                <span class="highlight">বন্ধুরা, এবার হবে পাগল করা খেলা!</span> 🎒🚌
             </h1>
 
-            <p class="hero-sub">
-                দেখতে দেখতে ২০২৬ ও ফুরিয়ে আসছে রে ভাই! চাকরি, ক্যারিয়ার, পরিবারের ভিড়ে হারিয়ে যাওয়ার আগে চল সবাই মিলে শেষবারের মতো কোনো পাহাড়ে বা সাগরে হারিয়ে যাই। সারারাত গান, ক্যাম্পফায়ার আর সীমাহীন পাগলামি। নিজের সময় বের কর, পছন্দের জায়গায় ভোট দে—চূড়ান্ত ফয়সালা হবে লাইভ লটারিতে!
-            </p>
+            <div class="hero-sub">
+                "বন্ধুরা, অনেক তো হলো সংসার সাধন আর দায়িত্বের বোঝা টানা! জীবনের অর্ধেকটা সময় তো পরিবার, ক্যারিয়ার আর সমাজের ঘানি টানতেই কেটে গেল রে ভাই। বয়স বাড়ছে, চুল পাকছে, ব্যস্ততা বাড়ছে—কিন্তু আমাদের ভেতরের সেই বাঁধনহারা পাগলাটে ছেলেগুলো কি মরে গেছে?
+                <br><br>
+                <strong>না, কক্ষনো না!</strong> এবার নিজের জন্য নিজেকে একটু সময় দেওয়ার পালা। শেষবারের মতো সব পিছুটান ভুলে চল হারিয়ে যাই কোনো গহীন পাহাড়ে কিংবা উত্তাল সাগরের তীরে। সারারাত ক্যাম্পফায়ার, বারবিকিউ, পুরোনো দিনের গান আর গলা ফাটিয়ে হাসাহাসি।
+                <br><br>
+                ক্যালেন্ডারে তোর ফ্রি থাকার দিনগুলোতে সিল মার, স্পট বেছে নে আর ট্যুরের দায়িত্ব কাঁধে তুলে নে। দেখা যাক কপাল কার সাথে কথা কয়!"
+            </div>
         </div>
 
         <!-- 📅 ১. ক্যালেন্ডার সেকশন -->
@@ -420,7 +534,7 @@
                 <span>১. তুই ডিসেম্বরের কোন কোন দিন ফ্রি আছিস?</span>
             </div>
             <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">
-                তোর সুবিধাজনক তারিখগুলোতে ট্যাপ করে মার্ক কর (এক বা একাধিক দিন সিলেক্ট করতে পারবি):
+                তোর সুবিধাজনক তারিখগুলোতে ট্যাপ করে মার্ক কর (এক বা একাধিক দিন সিলেক্ট করা যাবে):
             </p>
 
             <div class="calendar-weekdays">
@@ -428,7 +542,7 @@
             </div>
             
             <div class="calendar-grid" id="calendarGrid">
-                <!-- জাভাস্ক্রিপ্ট দিনগুলো জেনারেট করবে -->
+                <!-- দিনগুলো জাভাস্ক্রিপ্ট জেনারেট করবে -->
             </div>
 
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 13px; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
@@ -437,7 +551,7 @@
             </div>
         </div>
 
-        <!-- 📍 ২. স্পট সিলেকশন ও ভোট -->
+        <!-- 📍 ২. স্পট সিলেকশন (ডানপাশের বৃত্ত পূরণ) -->
         <div class="glass-card">
             <div class="section-header">
                 <i class="fa-solid fa-map-location-dot text-pink-400"></i>
@@ -447,24 +561,41 @@
             <div class="place-options" id="placeOptionsList">
                 <div class="place-item" onclick="selectPlace('সুন্দরবন 🐅')">
                     <span>সুন্দরবন 🐅</span>
-                    <div class="place-check"><i class="fa-solid fa-check"></i></div>
+                    <div class="place-circle"><div class="circle-dot"></div></div>
                 </div>
                 <div class="place-item" onclick="selectPlace('বান্দরবান ⛰️')">
                     <span>বান্দরবান ⛰️</span>
-                    <div class="place-check"><i class="fa-solid fa-check"></i></div>
+                    <div class="place-circle"><div class="circle-dot"></div></div>
                 </div>
                 <div class="place-item" onclick="selectPlace('রাঙ্গামাটি 🏞️')">
                     <span>রাঙ্গামাটি 🏞️</span>
-                    <div class="place-check"><i class="fa-solid fa-check"></i></div>
+                    <div class="place-circle"><div class="circle-dot"></div></div>
                 </div>
                 <div class="place-item" onclick="selectPlace('সেন্টমার্টিন 🌊')">
                     <span>সেন্টমার্টিন 🌊</span>
-                    <div class="place-check"><i class="fa-solid fa-check"></i></div>
+                    <div class="place-circle"><div class="circle-dot"></div></div>
                 </div>
                 <div class="place-item" onclick="selectPlace('যেখানে খুশি 📍')">
                     <span>যেখানে খুশি 📍</span>
-                    <div class="place-check"><i class="fa-solid fa-check"></i></div>
+                    <div class="place-circle"><div class="circle-dot"></div></div>
                 </div>
+            </div>
+
+            <!-- 👑 ৩. ট্যুরে নিজের দায়িত্ব নির্বাচন -->
+            <div style="margin-top: 18px; margin-bottom: 8px;">
+                <label style="font-size: 13px; font-weight: 700; color: #cbd5e1; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-hand-holding-heart text-emerald-400"></i> এই ট্যুরকে সফল করতে আমি যে দায়িত্ব নিতে চাই:
+                </label>
+            </div>
+            
+            <div class="role-group" id="roleGroup">
+                <div class="role-chip" onclick="selectRole('👑 ট্যুর ম্যানেজার')">👑 ট্যুর ম্যানেজার</div>
+                <div class="role-chip" onclick="selectRole('💰 হিসাবরক্ষক / ক্যাশিয়ার')">💰 ক্যাশিয়ার</div>
+                <div class="role-chip" onclick="selectRole('🧭 গাইড ও এক্সপ্লোরার')">🧭 গাইড</div>
+                <div class="role-chip" onclick="selectRole('🍖 বারবিকিউ ও খাবার মাস্টার')">🍖 খাবার মাস্টার</div>
+                <div class="role-chip" onclick="selectRole('📸 ফটোগ্রাফার ও রিলস মেকার')">📸 ফটোগ্রাফার</div>
+                <div class="role-chip" onclick="selectRole('🎸 বিনোদন ও ডিজে স্পেশালিস্ট')">🎸 গান-বাজনা</div>
+                <div class="role-chip" onclick="selectRole('😎 কোনো কাজ নাই, শুধু চিল')">😎 শুধু চিল</div>
             </div>
 
             <!-- নাম ও সাবমিট বাটন -->
@@ -479,27 +610,38 @@
                 <div style="font-size: 13px; line-height: 1.6; color: #e2e8f0;">
                     👤 <strong>নাম:</strong> <span id="ticketName">-</span><br>
                     📍 <strong>পছন্দের স্পট:</strong> <span id="ticketPlace">-</span><br>
-                    📅 <strong>সিলেক্ট করা তারিখ:</strong> <span id="ticketDates">-</span>
+                    📅 <strong>সিলেক্ট করা তারিখ:</strong> <span id="ticketDates">-</span><br>
+                    🎖️ <strong>ট্যুরের দায়িত্ব:</strong> <span id="ticketRole" style="color: #34d399;">-</span>
                 </div>
             </div>
         </div>
 
-        <!-- 📋 ৩. এখন পর্যন্ত ফলাফল (ডামি নাম ছাড়া) -->
+        <!-- 📊 ৪. লাইভ ফলাফল ও ভোটারদের তালিকা -->
         <div class="glass-card">
             <div class="section-header">
-                <i class="fa-solid fa-chart-simple text-emerald-400"></i>
-                <span>এখন পর্যন্ত ফলাফল</span>
+                <i class="fa-solid fa-chart-pie text-emerald-400"></i>
+                <span>এখন পর্যন্ত ফলাফল (রিয়েলটাইম শিট)</span>
             </div>
+
+            <!-- স্পট ভিত্তিক লাইভ স্ট্যাটাস বার -->
+            <div class="stat-bar-container" id="statBarContainer">
+                <!-- ডায়নামিক প্রোগ্রেস বার আসবে -->
+            </div>
+
+            <div style="font-size: 12px; color: #94a3b8; margin: 14px 0 8px 0; font-weight: 700; text-transform: uppercase;">
+                📋 বন্ধুদের ভোটের তালিকা:
+            </div>
+            
             <div id="votersListContainer">
-                <!-- ইউজারদের দেওয়া ভোট এখানে লাইভ শো করবে -->
+                <!-- ভোটারদের আসল কার্ডগুলো শো করবে -->
             </div>
         </div>
 
-        <!-- 🎡 ৪. লাইভ লটারি স্পিনার -->
+        <!-- 🎡 ৫. লাইভ লটারি স্পিনার -->
         <div class="glass-card" style="text-align: center;">
             <div class="section-header" style="justify-content: center;">
                 <i class="fa-solid fa-dice text-amber-400"></i>
-                <span>৪. লাইভ লটারি (কার কপাল ভালো)</span>
+                <span>৫. লাইভ লটারি (কার কপাল ভালো)</span>
             </div>
             <p style="font-size: 12px; color: #94a3b8;">চূড়ান্ত সিদ্ধান্ত নিতে চাকা ঘুরা মামা!</p>
 
@@ -514,11 +656,11 @@
             <div id="winnerResult" style="margin-top: 14px; font-size: 16px; font-weight: 800; color: #34d399; min-height: 24px;"></div>
         </div>
 
-        <!-- 🚀 ৫. বন্ধুদের সাথে শেয়ার -->
+        <!-- 🚀 ৬. বন্ধুদের সাথে শেয়ার -->
         <div class="glass-card">
             <div class="section-header">
                 <i class="fa-solid fa-share-nodes text-cyan-400"></i>
-                <span>৫. বন্ধুদের মেসেঞ্জারে পাঠা (যেন কেউ মিস না করে)</span>
+                <span>৬. বন্ধুদের মেসেঞ্জারে পাঠা (যেন কেউ না পালায়)</span>
             </div>
 
             <div class="share-grid">
@@ -531,11 +673,39 @@
             </div>
         </div>
 
+        <!-- ⏳ ৭. কাউন্টডাউন ওয়ার্নিং অ্যালার্ট -->
+        <div class="countdown-card">
+            <div style="font-size: 14px; font-weight: 800; color: #f87171; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                <i class="fa-solid fa-clock"></i> সময় কিন্তু দ্রুত ফুরাচ্ছে মামা!
+            </div>
+            <p style="font-size: 11px; color: #cbd5e1; margin-top: 4px;">
+                ডিসেম্বর ২০২৬ ব্যাচেলর ট্যুর শুরু হতে আর মাত্র বাকি:
+            </p>
+
+            <div class="countdown-timer">
+                <div class="countdown-unit">
+                    <div class="countdown-num" id="cdDays">০০</div>
+                    <div class="countdown-label">দিন</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-num" id="cdHours">০০</div>
+                    <div class="countdown-label">ঘণ্টা</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-num" id="cdMins">০০</div>
+                    <div class="countdown-label">মিনিট</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-num" id="cdSecs">০০</div>
+                    <div class="countdown-label">সেকেন্ড</div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- লজিক ও জাভাস্ক্রিপ্ট -->
     <script>
-        // ইংরেজি থেকে বাংলা সংখ্যার রূপান্তরকারী
         const bnDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
         function toBanglaNum(num) {
             return num.toString().split('').map(d => bnDigits[d] || d).join('');
@@ -546,10 +716,9 @@
         const selectedDaysText = document.getElementById('selectedDaysText');
         let selectedDates = [];
 
-        // ডিসেম্বর ২০২৬ মঙ্গলবার থেকে শুরু (Tuesday = 2 empty cells)
-        const emptyCells = 2;
+        const emptyCells = 2; // Dec 1, 2026 starts on Tuesday
         const totalMonthDays = 31;
-        const holidayDates = [16, 25]; // ১৬ বিজয় দিবস, ২৫ বড়দিন
+        const holidayDates = [16, 25];
 
         for (let i = 0; i < emptyCells; i++) {
             const empty = document.createElement('div');
@@ -593,17 +762,59 @@
             });
         }
 
-        // ৩. ডামি ডেটা সম্পূর্ণ মুক্ত ফলাফল তালিকা
-        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_votes_clean')) || [];
+        // ৩. দায়িত্ব নির্বাচন
+        let chosenRole = '😎 শুধু চিল';
+        function selectRole(roleName) {
+            chosenRole = roleName;
+            document.querySelectorAll('.role-chip').forEach(el => {
+                el.classList.remove('active');
+                if (el.innerText === roleName) {
+                    el.classList.add('active');
+                }
+            });
+        }
 
-        function renderVotersList() {
+        // ৪. ফলাফল ও ভোট হ্যান্ডলার
+        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_v3')) || [];
+
+        function renderResults() {
+            // প্রোগ্রেস বার তৈরি
+            const allSpots = ['সুন্দরবন 🐅', 'বান্দরবান ⛰️', 'রাঙ্গামাটি 🏞️', 'সেন্টমার্টিন 🌊', 'যেখানে খুশি 📍'];
+            const spotCounts = {};
+            allSpots.forEach(s => spotCounts[s] = 0);
+            
+            votersData.forEach(v => {
+                if (spotCounts[v.place] !== undefined) spotCounts[v.place]++;
+            });
+
+            const statBarContainer = document.getElementById('statBarContainer');
+            statBarContainer.innerHTML = '';
+
+            const totalVotes = votersData.length;
+            allSpots.forEach(spot => {
+                const count = spotCounts[spot] || 0;
+                const percent = totalVotes > 0 ? Math.round((count / totalVotes) * 100) : 0;
+                statBarContainer.innerHTML += `
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span>${spot}</span>
+                            <span>${toBanglaNum(count)} ভোট (${toBanglaNum(percent)}%)</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" style="width: ${percent}%;"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // ভোটারদের কার্ড রেন্ডার
             const container = document.getElementById('votersListContainer');
             container.innerHTML = '';
             
             if (votersData.length === 0) {
                 container.innerHTML = `
-                    <div style="text-align: center; padding: 20px; color: #94a3b8; font-size: 13px;">
-                        এখনও কেউ ভোট দেয়নি রে ভাই!<br><strong style="color: #a78bfa;">তুই-ই প্রথম ভোট মাইরা খাতা খোল! 🚀</strong>
+                    <div style="text-align: center; padding: 18px; color: #94a3b8; font-size: 13px;">
+                        এখনও কেউ ভোট দেয় নাই রে ভাই!<br><strong style="color: #a78bfa;">তুই-ই প্রথম ভোট মাইরা খাতা খোল! 🚀</strong>
                     </div>
                 `;
                 return;
@@ -613,7 +824,10 @@
                 container.innerHTML += `
                     <div class="voter-card">
                         <div>
-                            <div class="voter-name">${v.name}</div>
+                            <div class="voter-name">
+                                ${v.name} 
+                                <span class="role-badge">${v.role}</span>
+                            </div>
                             <div class="voter-details"><i class="fa-regular fa-calendar-check text-indigo-400"></i> ${v.dates}</div>
                         </div>
                         <div class="voter-tag">${v.place}</div>
@@ -622,13 +836,12 @@
             });
         }
 
-        // ৪. ফর্ম সাবমিট
         function submitTourVote() {
             const nameInput = document.getElementById('voterName');
             const name = nameInput.value.trim();
 
             if (!name) {
-                alert("আরে বন্ধু, তোর নাম তো লিখবি আগে!");
+                alert("আরে মামা, তোর নাম তো লিখবি আগে!");
                 return;
             }
             if (!chosenPlace) {
@@ -642,26 +855,26 @@
 
             const formattedDates = selectedDates.map(d => toBanglaNum(d)).join(', ') + " ডিসেম্বর";
 
-            // নতুন ভোট সেভ
             votersData.unshift({
                 name: name,
                 place: chosenPlace,
-                dates: formattedDates
+                dates: formattedDates,
+                role: chosenRole
             });
 
-            localStorage.setItem('bachelor_tour_votes_clean', JSON.stringify(votersData));
+            localStorage.setItem('bachelor_tour_v3', JSON.stringify(votersData));
 
-            // কনফার্মেশন টিকেট
+            // টিকেট আপডেট
             document.getElementById('ticketName').innerText = name;
             document.getElementById('ticketPlace').innerText = chosenPlace;
             document.getElementById('ticketDates').innerText = formattedDates;
+            document.getElementById('ticketRole').innerText = chosenRole;
             document.getElementById('ticketView').style.display = 'block';
 
-            renderVotersList();
+            renderResults();
 
-            // কনফেটি পার্টি ব্লাস্ট
             confetti({
-                particleCount: 100,
+                particleCount: 110,
                 spread: 70,
                 origin: { y: 0.7 }
             });
@@ -691,7 +904,6 @@
                 wheelCtx.arc(150, 150, 28, angle + sliceAngle, angle, true);
                 wheelCtx.fill();
 
-                // টেক্সট ড্র
                 wheelCtx.save();
                 wheelCtx.fillStyle = "#ffffff";
                 wheelCtx.font = "bold 13px 'Hind Siliguri', sans-serif";
@@ -733,7 +945,7 @@
                     document.getElementById('winnerResult').innerText = "🎉 বিজয়ী স্পট: " + winner + "!";
 
                     confetti({
-                        particleCount: 120,
+                        particleCount: 130,
                         spread: 80,
                         origin: { y: 0.6 }
                     });
@@ -742,13 +954,13 @@
             requestAnimationFrame(animate);
         }
 
-        // ৬. শেয়ারিং হ্যান্ডলার
+        // ৬. শেয়ারিং
         function shareMessenger() {
             const currentUrl = window.location.href;
             if (navigator.share) {
                 navigator.share({
                     title: 'ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🎒🔥',
-                    text: 'বন্ধু, ডিসেম্বরের ট্যুরের জন্য তারিখ ও স্পটে ভোট দে আর লটারি ঘুরা!',
+                    text: 'বন্ধু, অনেক হলো সংসার সাধন! ডিসেম্বরের ট্যুরের জন্য তারিখ, স্পট আর দায়িত্ব বেছে নে!',
                     url: currentUrl
                 }).catch(() => {});
             } else {
@@ -762,8 +974,29 @@
             });
         }
 
+        // ৭. লাইভ কাউন্টডাউন টাইমার (ডিসেম্বর ১, ২০২৬ পর্যন্ত)
+        function updateCountdown() {
+            const targetDate = new Date("December 1, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('cdDays').innerText = toBanglaNum(days);
+                document.getElementById('cdHours').innerText = toBanglaNum(hours);
+                document.getElementById('cdMins').innerText = toBanglaNum(mins);
+                document.getElementById('cdSecs').innerText = toBanglaNum(secs);
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
         // ইনিশিয়াল লোড
-        renderVotersList();
+        renderResults();
         drawWheel();
     </script>
 </body>
