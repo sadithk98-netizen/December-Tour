@@ -1,230 +1,522 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🎒🚌</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Hind Siliguri', sans-serif; }
-    .wheel-pointer {
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-top: 25px solid #ef4444;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🎒🚌</title>
+    <!-- FontAwesome আইকন -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Confetti Party Effect -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #090d16 0%, #111827 50%, #1f1435 100%);
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 60px;
+        }
+        
+        .ticker-banner {
+            width: 100%;
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .glass-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .icon-wrapper {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            font-size: 22px;
+            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+        }
+        .logo-header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .logo-header p {
+            font-size: 11px;
+            color: #a5b4fc;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 8px;
+        }
+
+        /* 📅 Calendar Styles */
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-bottom: 8px;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            text-align: center;
+        }
+        .day-cell {
+            padding: 9px 0;
+            font-size: 13px;
+            font-weight: 600;
+            color: #cbd5e1;
+            background: rgba(255,255,255,0.04);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .day-cell.holiday {
+            border: 1px solid #f43f5e;
+            color: #fda4af;
+        }
+        .day-cell.selected {
+            background: linear-gradient(135deg, #6366f1, #a855f7) !important;
+            color: #ffffff !important;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+            transform: scale(1.05);
+        }
+        .counter-badge {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        /* 🗳️ Poll Styles */
+        .input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .modern-input {
+            flex: 1;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 10px 14px;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 13px;
+            outline: none;
+        }
+        .modern-input:focus { border-color: #a855f7; }
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 0 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .poll-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+        }
+        .vote-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vote-count {
+            font-size: 12px;
+            font-weight: 700;
+            color: #c084fc;
+        }
+        .btn-vote {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #ffffff;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-vote:hover { background: #6366f1; }
+
+        /* 🎡 Wheel Elements */
+        .wheel-container {
+            position: relative;
+            width: 270px;
+            height: 270px;
+            margin: 15px auto;
+        }
+        canvas#wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+        }
+        .wheel-pointer {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 14px solid transparent;
+            border-right: 14px solid transparent;
+            border-top: 22px solid #ef4444;
+            z-index: 20;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        }
+
+        /* 💬 Discussion Feed */
+        .chat-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 160px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+        .chat-bubble {
+            background: rgba(0,0,0,0.25);
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+        .chat-user {
+            font-weight: 700;
+            color: #f59e0b;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 pb-12 antialiased">
+<body>
 
-  <!-- টপ ব্যানার -->
-  <div class="bg-gradient-to-r from-teal-700 to-emerald-800 text-white py-8 px-4 text-center shadow-md">
-    <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">অফিসিয়াল প্ল্যানিং</span>
-    <h1 class="text-2xl sm:text-4xl font-extrabold mt-3">ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬! 🎒🚌</h1>
-    <p class="text-teal-100 mt-2 text-sm sm:text-base max-w-md mx-auto">
-      কোথায় যাব আমরা? সিদ্ধান্ত হবে সবার ভোটে আর চূড়ান্ত স্পট নির্ধারণ হবে লাইভ লটারিতে!
-    </p>
-  </div>
-
-  <div class="max-w-xl mx-auto px-4 mt-6 space-y-6">
-
-    <!-- নোটিশ বোর্ড -->
-    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
-      <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2 mb-2">
-        📢 ট্যুর ইনফো ও নিয়মাবলী
-      </h2>
-      <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
-        <li>কোনো সাইন-আপ ছাড়াই পোলে নিজের পছন্দের জায়গায় ভোট দাও।</li>
-        <li>লিস্টে নাম না থাকলে নিজে অপশন যোগ করতে পারো।</li>
-        <li>ভোট শেষে শীর্ষ স্থানগুলো নিয়ে নিচে <strong>লাইভ লটারি হুইল</strong> ঘোরানো হবে।</li>
-      </ul>
+    <div class="ticker-banner">
+        🚀 ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬! নিজের ভোট দিন ও লাইভ চাকা ঘোরান!
     </div>
 
-    <!-- ডিসেম্বর ২০২৬ ক্যালেন্ডার -->
-    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-          📅 ডিসেম্বর ২০২৬
-        </h2>
-        <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">৩১ দিন</span>
-      </div>
+    <div class="main-container">
 
-      <!-- ক্যালেন্ডার বার -->
-      <div class="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-slate-400 mb-2">
-        <span>শনি</span>
-        <span class="text-red-500">রবি</span>
-        <span>সোম</span>
-        <span>মঙ্গল</span>
-        <span>বুধ</span>
-        <span>বৃহ</span>
-        <span class="text-red-500">শুক্র</span>
-      </div>
+        <!-- হেডার কার্ড -->
+        <div class="glass-box logo-header">
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-mountain-sun text-white"></i>
+            </div>
+            <div>
+                <h1>ব্যাচেলর ট্যুর ২০২৬ 🎒</h1>
+                <p>সব ফ্রেন্ডদের মতামত ও লাইভ লটারি</p>
+            </div>
+        </div>
 
-      <!-- দিনসমূহ (ডিসেম্বর ২০২৬ শুরু হয়েছে মঙ্গলবার থেকে) -->
-      <div class="grid grid-cols-7 gap-1.5 text-center text-xs sm:text-sm font-medium">
-        <span class="p-2 text-slate-200">-</span>
-        <span class="p-2 text-slate-200">-</span>
-        <span class="p-2 text-slate-200">-</span>
-        <span class="p-2 bg-slate-50 rounded-lg">১</span>
-        <span class="p-2 bg-slate-50 rounded-lg">২</span>
-        <span class="p-2 bg-slate-50 rounded-lg">৩</span>
-        <span class="p-2 bg-red-50 text-red-600 font-bold rounded-lg">৪</span>
+        <!-- নিয়মাবলী কার্ড -->
+        <div class="glass-box">
+            <div class="section-title">
+                <i class="fa-solid fa-circle-info text-amber-400"></i> ট্যুর রুলস ও তথ্য
+            </div>
+            <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6;">
+                ১. ক্যালেন্ডারে তোমার সম্ভাব্য পছন্দের তারিখগুলোতে ক্লিক করো।<br>
+                ২. পছন্দের স্পটে ভোট দাও অথবা নিজে নতুন স্পট যোগ করো।<br>
+                ৩. চূড়ান্ত ফলাফল সবার সামনে স্পিনিং হুইল ঘুরিয়ে নির্ধারিত হবে!
+            </p>
+        </div>
 
-        <span class="p-2 bg-slate-50 rounded-lg">৫</span>
-        <span class="p-2 bg-red-50 text-red-500 rounded-lg">৬</span>
-        <span class="p-2 bg-slate-50 rounded-lg">৭</span>
-        <span class="p-2 bg-slate-50 rounded-lg">৮</span>
-        <span class="p-2 bg-slate-50 rounded-lg">৯</span>
-        <span class="p-2 bg-slate-50 rounded-lg">১০</span>
-        <span class="p-2 bg-red-50 text-red-600 font-bold rounded-lg">১১</span>
+        <!-- ডিসেম্বর ২০২৬ ক্যালেন্ডার -->
+        <div class="glass-box">
+            <div class="section-title">
+                <i class="fa-solid fa-calendar-days text-indigo-400"></i> ডিসেম্বর ২০২৬ ক্যালেন্ডার
+            </div>
+            <p style="font-size: 11px; color: #94a3b8; margin-bottom: 10px;">(ক্লিক করে সম্ভাব্য ভ্রমণের তারিখ সিলেক্ট করো)</p>
+            
+            <div class="calendar-weekdays">
+                <span>রবি</span><span>সোম</span><span>মঙ্গল</span><span>বুধ</span><span>বৃহ</span><span style="color:#f43f5e">শুক্র</span><span style="color:#f43f5e">শনি</span>
+            </div>
+            <div class="calendar-grid" id="calendarGrid">
+                <!-- জাভাস্ক্রিপ্ট দিনগুলো এখানে বসাবে -->
+            </div>
 
-        <span class="p-2 bg-slate-50 rounded-lg">১২</span>
-        <span class="p-2 bg-red-50 text-red-500 rounded-lg">১৩</span>
-        <span class="p-2 bg-slate-50 rounded-lg">১৪</span>
-        <span class="p-2 bg-slate-50 rounded-lg">১৫</span>
-        <span class="p-2 bg-emerald-100 text-emerald-800 font-bold rounded-lg ring-1 ring-emerald-400" title="বিজয় দিবস">১৬</span>
-        <span class="p-2 bg-slate-50 rounded-lg">১৭</span>
-        <span class="p-2 bg-red-50 text-red-600 font-bold rounded-lg">১৮</span>
+            <div class="counter-badge">
+                <span>নির্বাচিত দিন:</span>
+                <span id="selectedDaysCount" style="color: #a855f7; font-weight: bold;">০ দিন</span>
+            </div>
+        </div>
 
-        <span class="p-2 bg-slate-50 rounded-lg">১৯</span>
-        <span class="p-2 bg-red-50 text-red-500 rounded-lg">২০</span>
-        <span class="p-2 bg-slate-50 rounded-lg">২১</span>
-        <span class="p-2 bg-slate-50 rounded-lg">২২</span>
-        <span class="p-2 bg-slate-50 rounded-lg">২৩</span>
-        <span class="p-2 bg-slate-50 rounded-lg">২৪</span>
-        <span class="p-2 bg-amber-100 text-amber-800 font-bold rounded-lg ring-1 ring-amber-400" title="বড়দিন">২৫</span>
+        <!-- পোল সেকশন -->
+        <div class="glass-box">
+            <div class="section-title">
+                <i class="fa-solid fa-square-poll-vertical text-emerald-400"></i> স্পট ভোটিং (Poll)
+            </div>
+            
+            <div class="input-group">
+                <input type="text" id="customSpotInput" class="modern-input" placeholder="নতুন কোনো স্পট যোগ করো...">
+                <button onclick="addSpot()" class="btn-primary">Add</button>
+            </div>
 
-        <span class="p-2 bg-slate-50 rounded-lg">২৬</span>
-        <span class="p-2 bg-red-50 text-red-500 rounded-lg">২৭</span>
-        <span class="p-2 bg-slate-50 rounded-lg">২৮</span>
-        <span class="p-2 bg-slate-50 rounded-lg">২৯</span>
-        <span class="p-2 bg-slate-50 rounded-lg">৩০</span>
-        <span class="p-2 bg-indigo-100 text-indigo-800 font-bold rounded-lg ring-1 ring-indigo-400" title="নিউ ইয়ার ইভ">৩১</span>
-      </div>
+            <div id="pollList">
+                <!-- পোল অপশনগুলো এখানে থাকবে -->
+            </div>
+        </div>
 
-      <div class="flex flex-wrap items-center justify-center gap-3 mt-4 text-[11px] text-slate-500">
-        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 bg-emerald-400 rounded-full"></span> ১৬ ডিসে (বিজয় দিবস)</span>
-        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 bg-amber-400 rounded-full"></span> ২৫ ডিসে (ছুটি)</span>
-        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 bg-indigo-400 rounded-full"></span> ৩১ ডিসে (থার্টি ফার্স্ট)</span>
-      </div>
+        <!-- স্পিন লটারি হুইল -->
+        <div class="glass-box" style="text-align: center;">
+            <div class="section-title" style="justify-content: center;">
+                <i class="fa-solid fa-dice text-pink-400"></i> লাইভ লটারি স্পিনার
+            </div>
+            <p style="font-size: 12px; color: #94a3b8;">পোলের স্থানগুলো থেকে ভাগ্য পরীক্ষা করো!</p>
+
+            <div class="wheel-container">
+                <div class="wheel-pointer"></div>
+                <canvas id="wheel" width="300" height="300"></canvas>
+            </div>
+
+            <button onclick="spinWheel()" id="spinBtn" class="btn-primary" style="padding: 10px 24px; font-size: 14px; border-radius: 50px;">
+                🎰 চাকা ঘোরান!
+            </button>
+            <div id="winnerDisplay" style="margin-top: 12px; font-weight: 700; font-size: 15px; color: #34d399; min-height: 24px;"></div>
+        </div>
+
+        <!-- লাইভ ডিসকাশন / চ্যাট -->
+        <div class="glass-box">
+            <div class="section-title">
+                <i class="fa-solid fa-comments text-amber-400"></i> ডিসকাশন বোর্ড
+            </div>
+            <div class="input-group" style="margin-bottom: 8px;">
+                <input type="text" id="chatName" class="modern-input" style="max-width: 100px;" placeholder="তোমার নাম">
+                <input type="text" id="chatMsg" class="modern-input" placeholder="কিছু বলো...">
+                <button onclick="sendMsg()" class="btn-primary"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+            <div class="chat-feed" id="chatFeed">
+                <div class="chat-bubble"><span class="chat-user">এডমিন:</span> সবাই দ্রুত ভোট দাও আর মতামত জানাও!</div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- পোল সেকশন (StrawPoll Embed) -->
-    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
-      <h2 class="text-lg font-bold text-slate-900 mb-1">🗳️ লাইভ পোল (ভোট দাও)</h2>
-      <p class="text-xs text-slate-500 mb-4">লগইন ছাড়া ভোট দেওয়া যাবে এবং যে কেউ নতুন স্পট যোগ করতে পারবে।</p>
-      
-      <!-- নিচের src লিংকে আপনার StrawPoll-এর লিংক বসিয়ে নেবেন -->
-      <div class="rounded-xl overflow-hidden border border-slate-100 bg-slate-50">
-        <iframe src="https://strawpoll.com/embed/" style="width: 100%; height: 440px; border: none;" allowfullscreen></iframe>
-      </div>
-    </div>
+    <!-- জাভাস্ক্রিপ্ট ইঞ্জিন -->
+    <script>
+        // ১. ক্যালেন্ডার ইঞ্জিন (ডিসেম্বর ২০২৬)
+        const calendarGrid = document.getElementById('calendarGrid');
+        const selectedDaysCount = document.getElementById('selectedDaysCount');
+        let selectedDates = [];
 
-    <!-- ইন-বিল্ট স্পিনিং হুইল (লটারি) -->
-    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center">
-      <h2 class="text-lg font-bold text-slate-900 mb-1">🎡 লাইভ লটারি স্পিনার</h2>
-      <p class="text-xs text-slate-500 mb-4">চাকা ঘুরিয়ে বিজয়ী স্পট বেছে নাও!</p>
+        // ১ ডিসেম্বর ২০২৬ ছিল মঙ্গলবার (Tuesday = index 2)
+        const emptyDays = 2; 
+        const totalDays = 31;
+        const holidays = [16, 25]; // ১৬ বিজয় দিবস, ২৫ বড়দিন
 
-      <div class="relative flex flex-col items-center justify-center">
-        <!-- পয়েন্টার -->
-        <div class="wheel-pointer -mb-2 z-10"></div>
-        <!-- ক্যানভাস চাকা -->
-        <canvas id="wheelCanvas" width="300" height="300" class="max-w-full rounded-full shadow-inner"></canvas>
-      </div>
+        for (let i = 0; i < emptyDays; i++) {
+            const emptyCell = document.createElement('div');
+            calendarGrid.appendChild(emptyCell);
+        }
 
-      <div class="mt-5">
-        <button id="spinBtn" class="bg-teal-700 hover:bg-teal-800 active:scale-95 text-white font-bold px-6 py-2.5 rounded-full shadow-md transition-all">
-          🎰 স্পিন করো!
-        </button>
-      </div>
-      <p id="winnerDisplay" class="mt-3 font-bold text-emerald-600 text-base h-6"></p>
-    </div>
+        for (let d = 1; d <= totalDays; d++) {
+            const cell = document.createElement('div');
+            cell.className = 'day-cell';
+            cell.innerText = d;
+            if (holidays.includes(d)) cell.classList.add('holiday');
 
-  </div>
+            cell.onclick = () => {
+                cell.classList.toggle('selected');
+                if (selectedDates.includes(d)) {
+                    selectedDates = selectedDates.filter(x => x !== d);
+                } else {
+                    selectedDates.push(d);
+                }
+                selectedDaysCount.innerText = selectedDates.length + " দিন";
+            };
+            calendarGrid.appendChild(cell);
+        }
 
-  <!-- স্পিন হুইল জাভাস্ক্রিপ্ট -->
-  <script>
-    const spots = ['বান্দরবান ⛰️', 'রাঙ্গামাটি 🏞️', 'সুন্দরবন 🐅', 'সেন্টমার্টিন 🌊', 'কক্সবাজার 🏖️', 'সিলেট 🍃'];
-    const colors = ['#0d9488', '#f59e0b', '#3b82f6', '#ec4899', '#8b5cf6', '#10b981'];
+        // ২. পোল এবং স্পিনার ডেটা
+        let spots = [
+            { name: "বান্দরবান ⛰️", votes: 3 },
+            { name: "রাঙ্গামাটি 🏞️", votes: 2 },
+            { name: "সুন্দরবন 🐅", votes: 1 },
+            { name: "সেন্টমার্টিন 🌊", votes: 4 }
+        ];
 
-    const canvas = document.getElementById('wheelCanvas');
-    const ctx = canvas.getContext('2d');
-    const spinBtn = document.getElementById('spinBtn');
-    const winnerDisplay = document.getElementById('winnerDisplay');
+        function renderPoll() {
+            const list = document.getElementById('pollList');
+            list.innerHTML = '';
+            spots.forEach((spot, idx) => {
+                list.innerHTML += `
+                    <div class="poll-item">
+                        <span style="font-size: 13px; font-weight: 500;">${spot.name}</span>
+                        <div class="vote-actions">
+                            <span class="vote-count">${spot.votes} ভোট</span>
+                            <button class="btn-vote" onclick="vote(${idx})"><i class="fa-solid fa-thumbs-up"></i></button>
+                        </div>
+                    </div>
+                `;
+            });
+            drawWheel();
+        }
 
-    let startAngle = 0;
-    const arc = Math.PI / (spots.length / 2);
-    let spinTimeout = null;
-    let spinAngleStart = 10;
-    let spinTime = 0;
-    let spinTimeTotal = 0;
+        function vote(index) {
+            spots[index].votes++;
+            renderPoll();
+        }
 
-    function drawRouletteWheel() {
-      ctx.clearRect(0, 0, 300, 300);
-      const outsideRadius = 140;
-      const textRadius = 90;
-      const insideRadius = 30;
+        function addSpot() {
+            const input = document.getElementById('customSpotInput');
+            const val = input.value.trim();
+            if (val) {
+                spots.push({ name: val + " 📍", votes: 1 });
+                input.value = '';
+                renderPoll();
+            }
+        }
 
-      for (let i = 0; i < spots.length; i++) {
-        const angle = startAngle + i * arc;
-        ctx.fillStyle = colors[i % colors.length];
+        // ৩. স্পিনিং হুইল ক্যানভাস ইঞ্জিন
+        const canvas = document.getElementById('wheel');
+        const ctx = canvas.getContext('2d');
+        const colors = ['#6366f1', '#ec4899', '#f59e0b', '#10b981', '#3b82f6', '#8b5cf6'];
+        let startAngle = 0;
+        let isSpinning = false;
 
-        ctx.beginPath();
-        ctx.arc(150, 150, outsideRadius, angle, angle + arc, false);
-        ctx.arc(150, 150, insideRadius, angle + arc, angle, true);
-        ctx.fill();
+        function drawWheel() {
+            const num = spots.length;
+            const arc = (2 * Math.PI) / num;
+            ctx.clearRect(0, 0, 300, 300);
 
-        ctx.save();
-        ctx.fillStyle = "white";
-        ctx.font = "bold 13px 'Hind Siliguri', sans-serif";
-        ctx.translate(150 + Math.cos(angle + arc / 2) * textRadius, 
-                      150 + Math.sin(angle + arc / 2) * textRadius);
-        ctx.rotate(angle + arc / 2 + Math.PI / 2);
-        const text = spots[i];
-        ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
-        ctx.restore();
-      }
-    }
+            spots.forEach((spot, i) => {
+                const angle = startAngle + i * arc;
+                ctx.fillStyle = colors[i % colors.length];
+                ctx.beginPath();
+                ctx.arc(150, 150, 140, angle, angle + arc);
+                ctx.arc(150, 150, 25, angle + arc, angle, true);
+                ctx.fill();
 
-    function rotateWheel() {
-      spinTime += 30;
-      if (spinTime >= spinTimeTotal) {
-        stopRotateWheel();
-        return;
-      }
-      const spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
-      startAngle += (spinAngle * Math.PI / 180);
-      drawRouletteWheel();
-      spinTimeout = requestAnimationFrame(rotateWheel);
-    }
+                // টেক্সট
+                ctx.save();
+                ctx.fillStyle = "white";
+                ctx.font = "bold 11px Hind Siliguri";
+                ctx.translate(150 + Math.cos(angle + arc / 2) * 85, 150 + Math.sin(angle + arc / 2) * 85);
+                ctx.rotate(angle + arc / 2 + Math.PI / 2);
+                ctx.fillText(spot.name.substring(0, 12), -ctx.measureText(spot.name.substring(0, 12)).width / 2, 0);
+                ctx.restore();
+            });
+        }
 
-    function stopRotateWheel() {
-      const degrees = startAngle * 180 / Math.PI + 90;
-      const arcd = arc * 180 / Math.PI;
-      const index = Math.floor((360 - degrees % 360) / arcd);
-      winnerDisplay.innerText = "🎉 বিজয়ী স্পট: " + spots[index] + "!";
-      spinBtn.disabled = false;
-    }
+        function spinWheel() {
+            if (isSpinning) return;
+            isSpinning = true;
+            document.getElementById('winnerDisplay').innerText = "ভাগ্য পরীক্ষা চলছে...";
+            
+            let spinTime = 0;
+            const totalSpinTime = 3500;
+            const randomExtra = Math.random() * 20 + 20;
 
-    function easeOut(t, b, c, d) {
-      const ts = (t /= d) * t;
-      const tc = ts * t;
-      return b + c * (tc + -3 * ts + 3 * t);
-    }
+            function animate() {
+                spinTime += 30;
+                if (spinTime >= totalSpinTime) {
+                    isSpinning = false;
+                    const num = spots.length;
+                    const arc = (2 * Math.PI) / num;
+                    const degrees = (startAngle * 180 / Math.PI) + 90;
+                    const arcd = 360 / num;
+                    const index = Math.floor((360 - (degrees % 360)) % 360 / arcd);
+                    
+                    const winner = spots[index].name;
+                    document.getElementById('winnerDisplay').innerText = `🎉 বিজয়ী স্পট: ${winner}!`;
+                    
+                    // কনফেটি ব্লাস্ট
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 }
+                    });
+                    return;
+                }
+                startAngle += (randomExtra * Math.PI / 180) * (1 - spinTime / totalSpinTime);
+                drawWheel();
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
 
-    spinBtn.addEventListener('click', () => {
-      spinBtn.disabled = true;
-      winnerDisplay.innerText = "লটারি ঘুরছে...";
-      spinAngleStart = Math.random() * 15 + 25;
-      spinTime = 0;
-      spinTimeTotal = Math.random() * 2000 + 3500;
-      rotateWheel();
-    });
+        // ৪. ডিসকাশন চ্যাট ইঞ্জিন
+        function sendMsg() {
+            const name = document.getElementById('chatName').value.trim() || 'বন্ধু';
+            const msg = document.getElementById('chatMsg').value.trim();
+            if (msg) {
+                const feed = document.getElementById('chatFeed');
+                feed.innerHTML += `<div class="chat-bubble"><span class="chat-user">${name}:</span> ${msg}</div>`;
+                document.getElementById('chatMsg').value = '';
+                feed.scrollTop = feed.scrollHeight;
+            }
+        }
 
-    drawRouletteWheel();
-  </script>
+        // ইনিশিয়াল লোড
+        renderPoll();
+    </script>
 </body>
 </html>
