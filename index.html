@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
-    <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🎒🔥</title>
+    <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🔥</title>
     
     <!-- ফন্ট ও আইকন -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,23 +50,21 @@
         .glow-left { background: #4f46e5; top: -60px; left: -80px; }
         .glow-right { background: #ec4899; bottom: 120px; right: -80px; }
 
-        /* 📢 শীর্ষ টিকার */
+        /* 📢 একদম ফ্রেশ টপ বার */
         .top-ticker {
             width: 100%;
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
-            padding: 10px 16px;
-            font-size: 13px;
+            padding: 12px 16px;
+            font-size: 14px;
             font-weight: 700;
-            color: #cbd5e1;
+            color: #fbbf24;
             position: sticky;
             top: 0;
             z-index: 100;
-        }
-        .top-ticker span {
-            color: #fbbf24;
+            letter-spacing: 0.5px;
         }
 
         .main-wrapper {
@@ -78,7 +76,7 @@
             gap: 22px;
         }
 
-        /* 💎 প্রিমিয়াম ৩ডি ফ্রস্টেড গ্লাস কার্ড */
+        /* 💎 ফ্রস্টেড গ্লাস কার্ড */
         .glass-card {
             background: rgba(22, 29, 47, 0.7);
             backdrop-filter: blur(16px);
@@ -90,7 +88,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
         }
 
-        /* 🖼️ সিনেমাটিক ব্যাকগ্রাউন্ড হিরো সেকশন */
+        /* 🖼️ সিনেমাটিক হিরো ব্যানার (ব্যাকগ্রাউন্ড ছবি ও অপাসিটি) */
         .hero-banner-container {
             position: relative;
             border-radius: 24px;
@@ -98,7 +96,7 @@
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-top: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
-            padding: 30px 20px 26px;
+            padding: 26px 18px;
             text-align: center;
             background: #0d1322;
         }
@@ -110,15 +108,15 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-            opacity: 0.32; /* ছবির হালকা অপাসিটি */
+            opacity: 0.25; /* মৃদু অপাসিটি */
             z-index: 0;
-            filter: contrast(1.1) saturate(1.15);
+            filter: contrast(1.1) saturate(1.1);
         }
 
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(9, 13, 22, 0.4) 0%, rgba(9, 13, 22, 0.95) 100%);
+            background: linear-gradient(180deg, rgba(9, 13, 22, 0.45) 0%, rgba(9, 13, 22, 0.95) 100%);
             z-index: 1;
         }
 
@@ -130,22 +128,22 @@
         .badge-pill {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
             background: rgba(239, 68, 68, 0.2);
             border: 1px solid rgba(239, 68, 68, 0.5);
             color: #fca5a5;
-            padding: 5px 14px;
+            padding: 5px 16px;
             border-radius: 50px;
             font-size: 12px;
             font-weight: 700;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             backdrop-filter: blur(8px);
         }
 
+        /* ১ লাইনে টাইটেল লক করা */
         .hero-title {
-            font-size: 25px;
+            font-size: clamp(15px, 4.4vw, 22px);
+            white-space: nowrap;
             font-weight: 800;
-            line-height: 1.4;
             color: #ffffff;
             margin-bottom: 14px;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
@@ -156,17 +154,18 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* সুন্দর ও পারফেক্ট অ্যালাইনমেন্ট টেক্সট বক্স */
         .hero-sub {
             font-size: 13.5px;
             color: #e2e8f0;
-            line-height: 1.75;
-            text-align: justify;
-            text-align-last: center;
-            background: rgba(0, 0, 0, 0.45);
+            line-height: 1.85;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(8px);
-            padding: 16px;
-            border-radius: 16px;
+            padding: 18px 16px;
+            border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            word-spacing: 0.5px;
         }
 
         .section-header {
@@ -229,7 +228,7 @@
             transform: scale(1.05);
         }
 
-        /* 📍 স্পট ও দায়িত্ব অপশন বাটন */
+        /* 📍 স্পট ও ডিউটি অপশন বাটন */
         .selection-list {
             display: flex;
             flex-direction: column;
@@ -252,8 +251,8 @@
             border-color: rgba(255, 255, 255, 0.15);
         }
         .select-card.active {
-            background: rgba(99, 102, 241, 0.15);
-            border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.15) !important;
+            border-color: #6366f1 !important;
             box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
         }
         .select-card span {
@@ -261,7 +260,7 @@
             font-weight: 600;
         }
 
-        /* 🔘 ডানপাশের পারফেক্ট বৃত্ত */
+        /* 🔘 পারফেক্ট রেডিও সার্কেল */
         .radio-circle {
             width: 22px;
             height: 22px;
@@ -281,11 +280,11 @@
             transition: all 0.2s ease;
         }
         .select-card.active .radio-circle {
-            border-color: #6366f1;
+            border-color: #6366f1 !important;
             box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
         }
         .select-card.active .circle-dot {
-            background: #6366f1;
+            background: #6366f1 !important;
         }
 
         /* ✍️ ৩ডি ইনপুট ও সাবমিট বাটন */
@@ -516,28 +515,30 @@
     <div class="bg-glow glow-left"></div>
     <div class="bg-glow glow-right"></div>
 
-    <!-- শীর্ষ টিকার -->
+    <!-- শীর্ষ টিকার (শুধুমাত্র ক্লিন লেখা) -->
     <div class="top-ticker">
-        🔥 <span>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬</span> — কোনো বাহানা চলবে না রে ভাই!
+        🔥 ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬
     </div>
 
     <div class="main-wrapper">
 
-        <!-- 🖼️ সিনেমাটিক হিরো ব্যানার (ছবির ওপর মৃদু অপাসিটি ও টাইটেল) -->
+        <!-- 🖼️ সিনেমাটিক হিরো ব্যানার (ব্যাকগ্রাউন্ড ফটো ও অপাসিটি) -->
         <div class="hero-banner-container">
-            <!-- আপনার আপলোড করা পুলের ছবি cover.jpg ব্যাকগ্রাউন্ড হিসেবে থাকবে -->
-            <img src="https://postimg.cc/21m2QnYg" class="hero-bg-img" alt="ট্যুরের স্মৃতি" onerror="this.style.display='none'">
+            <img src="https://i.postimg.cc/21m2QnYg/image.jpg" class="hero-bg-img" alt="ট্যুরের স্মৃতি" onerror="this.src='cover.jpg'">
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
+                <!-- কোনো ওয়ার্নিং আইকন ছাড়া ক্লিন ব্যাজ -->
                 <div class="badge-pill">
-                    <i class="fa-solid fa-triangle-exclamation"></i> কোনো বাহানা চলবে না
+                    কোনো বাহানা চলবে না
                 </div>
                 
+                <!-- ১ লাইনে লক করা পরিষ্কার টাইটেল -->
                 <h1 class="hero-title">
-                    <span class="highlight">বন্ধুরা, এবার হবে শতাব্দীর সেরা পাগল করা ট্যুর</span> 🎒🚌
+                    <span class="highlight">বন্ধুরা, এবার হবে শতাব্দীর সেরা পাগল করা ট্যুর</span>
                 </h1>
 
+                <!-- সুন্দরভাবে সাজানো ইমোশনাল লেখা -->
                 <div class="hero-sub">
                     বন্ধুরা, অনেক তো হলো সংসার সাধন আর দায়িত্বের ঘানি টানা! জীবনের অর্ধেকটা সময় তো পরিবার, ক্যারিয়ার আর সমাজের নিয়ম মানতেই পার হয়ে গেল। বয়স বাড়ছে, ব্যস্ততা বাড়ছে—এবার নিজের জন্য নিজেকে একটু সময় দেওয়ার পালা। সব পিছুটান ভুলে চল সবাই মিলে হারিয়ে যাই , পুরোনো দিনের গান আর আড্ডা।
                     <br><br>
@@ -550,10 +551,10 @@
         <div class="glass-card">
             <div class="section-header">
                 <i class="fa-solid fa-calendar-days text-indigo-400"></i>
-                <span>১. তুই ডিসেম্বরের কোন কোন দিন ফ্রি আছিস?</span>
+                <span>১. ডিসেম্বরের কোন কোন দিন ফ্রি আছিস?</span>
             </div>
             <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">
-                তোর সুবিধাজনক তারিখগুলোতে ট্যাপ করে মার্ক কর (এক বা একাধিক দিন সিলেক্ট করা যাবে):
+                সুবিধাজনক তারিখগুলোতে ট্যাপ করে মার্ক কর (এক বা একাধিক দিন সিলেক্ট করা যাবে):
             </p>
 
             <div class="calendar-weekdays">
@@ -578,30 +579,30 @@
             </div>
 
             <div class="selection-list" id="placeOptionsList">
-                <div class="select-card place-card" onclick="selectPlace('সুন্দরবন 🐅')">
+                <div class="select-card place-card" onclick="selectPlace(this, 'সুন্দরবন 🐅')">
                     <span>সুন্দরবন 🐅</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="select-card place-card" onclick="selectPlace('বান্দরবান ⛰️')">
+                <div class="select-card place-card" onclick="selectPlace(this, 'বান্দরবান ⛰️')">
                     <span>বান্দরবান ⛰️</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="select-card place-card" onclick="selectPlace('রাঙ্গামাটি 🏞️')">
+                <div class="select-card place-card" onclick="selectPlace(this, 'রাঙ্গামাটি 🏞️')">
                     <span>রাঙ্গামাটি 🏞️</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="select-card place-card" onclick="selectPlace('সেন্টমার্টিন 🌊')">
+                <div class="select-card place-card" onclick="selectPlace(this, 'সেন্টমার্টিন 🌊')">
                     <span>সেন্টমার্টিন 🌊</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="select-card place-card" onclick="selectPlace('যেখানে খুশি 📍')">
+                <div class="select-card place-card" onclick="selectPlace(this, 'যেখানে খুশি 📍')">
                     <span>যেখানে খুশি 📍</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
             </div>
         </div>
 
-        <!-- 👑 ৩. দায়িত্ব নির্বাচন (পোলের মতো বড় ফিল্ড) -->
+        <!-- 👑 ৩. দায়িত্ব নির্বাচন (১০০% ফাংশনাল বাটন) -->
         <div class="glass-card">
             <div class="section-header">
                 <i class="fa-solid fa-hand-holding-heart text-emerald-400"></i>
@@ -612,31 +613,31 @@
             </p>
 
             <div class="selection-list" id="dutyOptionsList">
-                <div class="select-card duty-card" onclick="selectDuty('👑 ট্যুর ম্যানেজার')">
+                <div class="select-card duty-card" onclick="selectDuty(this, '👑 ট্যুর ম্যানেজার')">
                     <span>👑 ট্যুর ম্যানেজার</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="select-card duty-card" onclick="selectDuty('💰 হিসাবরক্ষক')">
-                    <span>💰 হিসাবরক্ষক )</span>
+                <div class="select-card duty-card" onclick="selectDuty(this, '💰 ক্যাশিয়ার')">
+                    <span>💰 ক্যাশিয়ার</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="select-card duty-card" onclick="selectDuty('🧭 গাইড')">
+                <div class="select-card duty-card" onclick="selectDuty(this, '🧭 গাইড')">
                     <span>🧭 গাইড</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="select-card duty-card" onclick="selectDuty('🍖 খাবার স্পেশালিস্ট')">
+                <div class="select-card duty-card" onclick="selectDuty(this, '🍖 খাবার স্পেশালিস্ট')">
                     <span>🍖 খাবার স্পেশালিস্ট</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="select-card duty-card" onclick="selectDuty('📸 ফটোগ্রাফার')">
+                <div class="select-card duty-card" onclick="selectDuty(this, '📸 ফটোগ্রাফার')">
                     <span>📸 ফটোগ্রাফার</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="select-card duty-card" onclick="selectDuty('🎸 বিনোদন')">
+                <div class="select-card duty-card" onclick="selectDuty(this, '🎸 বিনোদন স্পেশালিস্ট')">
                     <span>🎸 বিনোদন স্পেশালিস্ট</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="select-card duty-card" onclick="selectDuty('😎 কশুধু চিল')">
+                <div class="select-card duty-card" onclick="selectDuty(this, '😎 শুধু চিল')">
                     <span>😎 শুধু চিল</span>
                     <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
@@ -660,7 +661,7 @@
             </div>
         </div>
 
-        <!-- 📊 ৪. লাইভ ফলাফল (বিস্তারিত তালিকা ও স্ট্যাটাস) -->
+        <!-- 📊 ৪. লাইভ ফলাফল শিট -->
         <div class="glass-card">
             <div class="section-header">
                 <i class="fa-solid fa-chart-pie text-emerald-400"></i>
@@ -792,32 +793,24 @@
             calendarGrid.appendChild(cell);
         }
 
-        // ২. স্পট সিলেকশন
+        // ২. স্পট সিলেকশন (সরাসরি এলিমেন্ট টার্গেট)
         let chosenPlace = '';
-        function selectPlace(placeName) {
+        function selectPlace(element, placeName) {
             chosenPlace = placeName;
-            document.querySelectorAll('.place-card').forEach(el => {
-                el.classList.remove('active');
-                if (el.innerText.includes(placeName)) {
-                    el.classList.add('active');
-                }
-            });
+            document.querySelectorAll('.place-card').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
         }
 
-        // ৩. দায়িত্ব নির্বাচন
+        // ৩. দায়িত্ব নির্বাচন (সরাসরি এলিমেন্ট টার্গেট - ১০০% কার্যকর)
         let chosenDuty = '';
-        function selectDuty(dutyName) {
+        function selectDuty(element, dutyName) {
             chosenDuty = dutyName;
-            document.querySelectorAll('.duty-card').forEach(el => {
-                el.classList.remove('active');
-                if (el.innerText.includes(dutyName)) {
-                    el.classList.add('active');
-                }
-            });
+            document.querySelectorAll('.duty-card').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
         }
 
         // ৪. ফলাফল ও ভোট হ্যান্ডলার
-        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_v5_final')) || [];
+        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_v6_fixed')) || [];
 
         function renderResults() {
             const allSpots = ['সুন্দরবন 🐅', 'বান্দরবান ⛰️', 'রাঙ্গামাটি 🏞️', 'সেন্টমার্টিন 🌊', 'যেখানে খুশি 📍'];
@@ -908,7 +901,7 @@
                 dates: formattedDates
             });
 
-            localStorage.setItem('bachelor_tour_v5_final', JSON.stringify(votersData));
+            localStorage.setItem('bachelor_tour_v6_fixed', JSON.stringify(votersData));
 
             document.getElementById('ticketName').innerText = name;
             document.getElementById('ticketPlace').innerText = chosenPlace;
@@ -1004,8 +997,8 @@
             const currentUrl = window.location.href;
             if (navigator.share) {
                 navigator.share({
-                    title: 'ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🎒🔥',
-                    text: 'বন্ধু, অনেক হলো সংসার সাধন! ডিসেম্বরের ট্যুরের জন্য তারিখ, স্পট আর দায়িত্ব বেছে নে!',
+                    title: 'ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🔥',
+                    text: 'বন্ধু, ডিসেম্বরের ট্যুরের জন্য তারিখ, স্পট আর দায়িত্ব বেছে নে!',
                     url: currentUrl
                 }).catch(() => {});
             } else {
