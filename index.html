@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" class="notranslate">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>ডিসেম্বর ব্যাচেলর ট্যুর ২০২৬ 🎒🔥</title>
     
     <!-- ফন্ট ও আইকন -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- একদম স্পষ্ট বাংলা সংখ্যার জন্য Noto Sans Bengali ও Hind Siliguri -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- কনফেটি স্ক্রিপ্ট -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -19,7 +21,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -35,7 +37,7 @@
             padding-bottom: 80px;
         }
 
-        /* 🌌 সফট প্রিমিয়াম ব্যাকগ্রাউন্ড অরবস */
+        /* 🌌 ব্যাকগ্রাউন্ড অরবস */
         .bg-glow {
             position: fixed;
             width: 360px;
@@ -108,9 +110,9 @@
             margin-bottom: 14px;
         }
         .hero-title {
-            font-size: 26px;
+            font-size: 25px;
             font-weight: 800;
-            line-height: 1.35;
+            line-height: 1.4;
             color: #ffffff;
             margin-bottom: 14px;
         }
@@ -122,7 +124,7 @@
         .hero-sub {
             font-size: 13.5px;
             color: #cbd5e1;
-            line-height: 1.75;
+            line-height: 1.8;
             text-align: justify;
             text-align-last: center;
             background: rgba(0, 0, 0, 0.25);
@@ -143,7 +145,7 @@
             padding-bottom: 10px;
         }
 
-        /* 📅 ৩ডি ক্যালেন্ডার */
+        /* 📅 ৩ডি ক্যালেন্ডার (পরিস্কার বাংলা সংখ্যা) */
         .calendar-weekdays {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -163,9 +165,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
-            font-weight: 600;
-            color: #cbd5e1;
+            font-family: 'Noto Sans Bengali', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #e2e8f0;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
@@ -178,8 +181,9 @@
             transform: translateY(-2px);
         }
         .day-cell.holiday {
-            border: 1px solid rgba(239, 68, 68, 0.4);
+            border: 1px solid rgba(239, 68, 68, 0.5);
             color: #f87171;
+            background: rgba(239, 68, 68, 0.05);
         }
         .day-cell.selected {
             background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
@@ -187,51 +191,51 @@
             border-color: #a78bfa !important;
             box-shadow: 0 6px 15px rgba(99, 102, 241, 0.45);
             transform: scale(1.05);
-            font-weight: 800;
         }
 
-        /* 📍 স্পট অপশন ও পারফেক্ট বৃত্ত পূরণ */
-        .place-options {
+        /* 📍 স্পট ও দায়িত্ব অপশন বাটন */
+        .selection-list {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
-        .place-item {
+        .select-card {
             display: flex;
             align-items: center;
             justify-content: space-between;
             background: rgba(255, 255, 255, 0.03);
             border: 1.5px solid rgba(255, 255, 255, 0.06);
-            padding: 14px 18px;
+            padding: 13px 18px;
             border-radius: 16px;
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        .place-item:hover {
+        .select-card:hover {
             background: rgba(255, 255, 255, 0.06);
             border-color: rgba(255, 255, 255, 0.15);
         }
-        .place-item.active {
+        .select-card.active {
             background: rgba(99, 102, 241, 0.15);
             border-color: #6366f1;
             box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
         }
-        .place-item span {
-            font-size: 15px;
+        .select-card span {
+            font-size: 14.5px;
             font-weight: 600;
         }
 
-        /* 🔘 ডানপাশের রেডিও বৃত্ত এনিমেশন */
-        .place-circle {
+        /* 🔘 ডানপাশের পারফেক্ট বৃত্ত */
+        .radio-circle {
             width: 22px;
             height: 22px;
             border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.25);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.2s ease;
+            flex-shrink: 0;
         }
         .circle-dot {
             width: 10px;
@@ -240,40 +244,12 @@
             background: transparent;
             transition: all 0.2s ease;
         }
-        .place-item.active .place-circle {
+        .select-card.active .radio-circle {
             border-color: #6366f1;
             box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
         }
-        .place-item.active .circle-dot {
+        .select-card.active .circle-dot {
             background: #6366f1;
-        }
-
-        /* 👑 দায়িত্ব নির্বাচন চিপস */
-        .role-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-        .role-chip {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #cbd5e1;
-            padding: 8px 14px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .role-chip:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-        .role-chip.active {
-            background: linear-gradient(135deg, #10b981, #059669);
-            border-color: #34d399;
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
         /* ✍️ ৩ডি ইনপুট ও সাবমিট বাটন */
@@ -330,10 +306,10 @@
 
         /* 📊 ফলাফল স্ট্যাটাস বার */
         .stat-bar-container {
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
         .stat-item {
-            margin-bottom: 9px;
+            margin-bottom: 10px;
         }
         .stat-label {
             display: flex;
@@ -356,48 +332,50 @@
             transition: width 0.5s ease;
         }
 
-        /* 📋 ভোটারদের তালিকা কার্ড */
-        .voter-card {
+        /* 📋 বিস্তারিত ফলাফলের ৩ডি কার্ড */
+        .detailed-voter-card {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 14px;
-            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .voter-top-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 8px;
         }
-        .voter-name {
-            font-size: 14px;
-            font-weight: 700;
-            color: #f8fafc;
+        .voter-name-bold {
+            font-size: 15px;
+            font-weight: 800;
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 6px;
         }
-        .voter-details {
-            font-size: 12px;
-            color: #94a3b8;
-            margin-top: 3px;
-        }
-        .voter-tag {
-            background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.25);
-            color: #a5b4fc;
-            padding: 5px 10px;
-            border-radius: 10px;
-            font-size: 12px;
-            font-weight: 600;
-            text-align: right;
-        }
-        .role-badge {
-            font-size: 10px;
+        .duty-badge-tag {
+            font-size: 11px;
             background: rgba(16, 185, 129, 0.15);
             color: #34d399;
             border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 2px 7px;
+            padding: 3px 8px;
             border-radius: 20px;
-            font-weight: 600;
+            font-weight: 700;
+        }
+        .voter-meta-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 12.5px;
+            color: #94a3b8;
+        }
+        .voter-meta-row strong {
+            color: #e2e8f0;
         }
 
         /* 🎡 লটারি স্পিনার ৩ডি */
@@ -462,7 +440,7 @@
             border-bottom-width: 1px;
         }
 
-        /* ⏳ কাউন্টডাউন ওয়ার্নিং বক্স */
+        /* ⏳ কাউন্টডাউন ওয়ার্নিং */
         .countdown-card {
             background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(168, 85, 247, 0.1));
             border: 1px solid rgba(239, 68, 68, 0.3);
@@ -484,6 +462,7 @@
             min-width: 58px;
         }
         .countdown-num {
+            font-family: 'Noto Sans Bengali', sans-serif;
             font-size: 20px;
             font-weight: 800;
             color: #fbbf24;
@@ -497,7 +476,7 @@
 </head>
 <body>
 
-    <!-- ব্যাকগ্রাউন্ড অরবস -->
+    <!-- সফট ব্যাকগ্রাউন্ড অরবস -->
     <div class="bg-glow glow-left"></div>
     <div class="bg-glow glow-right"></div>
 
@@ -511,19 +490,19 @@
         <!-- 🔥 সুপার ইমোশনাল ও জোশ হিরো বক্স -->
         <div class="glass-card hero-box">
             <div class="badge-pill">
-                <i class="fa-solid fa-triangle-exclamation"></i> আর কোনো বাহানা চলবে না!
+                <i class="fa-solid fa-triangle-exclamation"></i> কোনো বাহানা চলবে না
             </div>
             
             <h1 class="hero-title">
-                <span class="highlight">বন্ধুরা, এবার হবে পাগল করা খেলা!</span> 🎒🚌
+                <span class="highlight">বন্ধুরা, এবার হবে শতাব্দীর সেরা পাগল করা ট্যুর</span> 🎒🚌
             </h1>
 
             <div class="hero-sub">
-                "বন্ধুরা, অনেক তো হলো সংসার সাধন আর দায়িত্বের বোঝা টানা! জীবনের অর্ধেকটা সময় তো পরিবার, ক্যারিয়ার আর সমাজের ঘানি টানতেই কেটে গেল রে ভাই। বয়স বাড়ছে, চুল পাকছে, ব্যস্ততা বাড়ছে—কিন্তু আমাদের ভেতরের সেই বাঁধনহারা পাগলাটে ছেলেগুলো কি মরে গেছে?
+                "বন্ধুরা, অনেক তো হলো সংসার সাধন আর দায়িত্বের ঘানি টানা! জীবনের অর্ধেকটা সময় তো পরিবার, ক্যারিয়ার আর সমাজের নিয়ম মানতেই পার হয়ে গেল রে ভাই। বয়স বাড়ছে, ব্যস্ততা বাড়ছে—এবার নিজের জন্য নিজেকে একটু সময় দেওয়ার পালা।
                 <br><br>
-                <strong>না, কক্ষনো না!</strong> এবার নিজের জন্য নিজেকে একটু সময় দেওয়ার পালা। শেষবারের মতো সব পিছুটান ভুলে চল হারিয়ে যাই কোনো গহীন পাহাড়ে কিংবা উত্তাল সাগরের তীরে। সারারাত ক্যাম্পফায়ার, বারবিকিউ, পুরোনো দিনের গান আর গলা ফাটিয়ে হাসাহাসি।
+                শেষবারের মতো সব পিছুটান ভুলে চল সবাই মিলে হারিয়ে যাই কোনো দূর অজানায়। সারারাত ক্যাম্পফায়ার, বারবিকিউ, পুরোনো দিনের গান আর বুকভরা আড্ডা।
                 <br><br>
-                ক্যালেন্ডারে তোর ফ্রি থাকার দিনগুলোতে সিল মার, স্পট বেছে নে আর ট্যুরের দায়িত্ব কাঁধে তুলে নে। দেখা যাক কপাল কার সাথে কথা কয়!"
+                ক্যালেন্ডারে তোর সুবিধাজনক দিনগুলোতে সিল মার, স্পট বেছে নে আর ট্যুরের দায়িত্ব কাঁধে তুলে নে। দেখা যাক কপাল কার সাথে কথা কয়!"
             </div>
         </div>
 
@@ -551,51 +530,76 @@
             </div>
         </div>
 
-        <!-- 📍 ২. স্পট সিলেকশন (ডানপাশের বৃত্ত পূরণ) -->
+        <!-- 📍 ২. স্পট সিলেকশন -->
         <div class="glass-card">
             <div class="section-header">
                 <i class="fa-solid fa-map-location-dot text-pink-400"></i>
                 <span>২. তুই কোথায় যেতে চাস? (স্পট বেছে নে)</span>
             </div>
 
-            <div class="place-options" id="placeOptionsList">
-                <div class="place-item" onclick="selectPlace('সুন্দরবন 🐅')">
+            <div class="selection-list" id="placeOptionsList">
+                <div class="select-card place-card" onclick="selectPlace('সুন্দরবন 🐅')">
                     <span>সুন্দরবন 🐅</span>
-                    <div class="place-circle"><div class="circle-dot"></div></div>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="place-item" onclick="selectPlace('বান্দরবান ⛰️')">
+                <div class="select-card place-card" onclick="selectPlace('বান্দরবান ⛰️')">
                     <span>বান্দরবান ⛰️</span>
-                    <div class="place-circle"><div class="circle-dot"></div></div>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="place-item" onclick="selectPlace('রাঙ্গামাটি 🏞️')">
+                <div class="select-card place-card" onclick="selectPlace('রাঙ্গামাটি 🏞️')">
                     <span>রাঙ্গামাটি 🏞️</span>
-                    <div class="place-circle"><div class="circle-dot"></div></div>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="place-item" onclick="selectPlace('সেন্টমার্টিন 🌊')">
+                <div class="select-card place-card" onclick="selectPlace('সেন্টমার্টিন 🌊')">
                     <span>সেন্টমার্টিন 🌊</span>
-                    <div class="place-circle"><div class="circle-dot"></div></div>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
-                <div class="place-item" onclick="selectPlace('যেখানে খুশি 📍')">
+                <div class="select-card place-card" onclick="selectPlace('যেখানে খুশি 📍')">
                     <span>যেখানে খুশি 📍</span>
-                    <div class="place-circle"><div class="circle-dot"></div></div>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
                 </div>
             </div>
+        </div>
 
-            <!-- 👑 ৩. ট্যুরে নিজের দায়িত্ব নির্বাচন -->
-            <div style="margin-top: 18px; margin-bottom: 8px;">
-                <label style="font-size: 13px; font-weight: 700; color: #cbd5e1; display: flex; align-items: center; gap: 6px;">
-                    <i class="fa-solid fa-hand-holding-heart text-emerald-400"></i> এই ট্যুরকে সফল করতে আমি যে দায়িত্ব নিতে চাই:
-                </label>
+        <!-- 👑 ৩. দায়িত্ব নির্বাচন (পোলের মতো বড় ফিল্ড) -->
+        <div class="glass-card">
+            <div class="section-header">
+                <i class="fa-solid fa-hand-holding-heart text-emerald-400"></i>
+                <span>৩. এই ট্যুরে তুই কী দায়িত্ব নিতে চাস?</span>
             </div>
-            
-            <div class="role-group" id="roleGroup">
-                <div class="role-chip" onclick="selectRole('👑 ট্যুর ম্যানেজার')">👑 ট্যুর ম্যানেজার</div>
-                <div class="role-chip" onclick="selectRole('💰 হিসাবরক্ষক / ক্যাশিয়ার')">💰 ক্যাশিয়ার</div>
-                <div class="role-chip" onclick="selectRole('🧭 গাইড ও এক্সপ্লোরার')">🧭 গাইড</div>
-                <div class="role-chip" onclick="selectRole('🍖 বারবিকিউ ও খাবার মাস্টার')">🍖 খাবার মাস্টার</div>
-                <div class="role-chip" onclick="selectRole('📸 ফটোগ্রাফার ও রিলস মেকার')">📸 ফটোগ্রাফার</div>
-                <div class="role-chip" onclick="selectRole('🎸 বিনোদন ও ডিজে স্পেশালিস্ট')">🎸 গান-বাজনা</div>
-                <div class="role-chip" onclick="selectRole('😎 কোনো কাজ নাই, শুধু চিল')">😎 শুধু চিল</div>
+            <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">
+                ট্যুরকে সফল ও স্মৃতিময় করতে নিজের একটি দায়িত্ব বেছে নে:
+            </p>
+
+            <div class="selection-list" id="dutyOptionsList">
+                <div class="select-card duty-card" onclick="selectDuty('👑 ট্যুর ম্যানেজার (প্ল্যানিং ও বুকিং)')">
+                    <span>👑 ট্যুর ম্যানেজার (প্ল্যানিং ও বুকিং)</span>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
+                </div>
+                <div class="select-card duty-card" onclick="selectDuty('💰 হিসাবরক্ষক / ক্যাশিয়ার (টাকার হিসাব)')">
+                    <span>💰 হিসাবরক্ষক / ক্যাশিয়ার (টাকার হিসাব)</span>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
+                </div>
+                <div class="select-card duty-card" onclick="selectDuty('🧭 গাইড ও স্পট এক্সপ্লোরার')">
+                    <span>🧭 গাইড ও স্পট এক্সপ্লোরার</span>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
+                </div>
+                <div class="select-card duty-card" onclick="selectDuty('🍖 বারবিকিউ ও খাবার স্পেশালিস্ট')">
+                    <span>🍖 বারবিকিউ ও খাবার স্পেশালিস্ট</span>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
+                </div>
+                <div class="select-card duty-card" onclick="selectDuty('📸 ফটোগ্রাফার ও রিলস মেকার')">
+                    <span>📸 ফটোগ্রাফার ও রিলস মেকার</span>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
+                </div>
+                <div class="select-card duty-card" onclick="selectDuty('🎸 বিনোদন ও ডিজে স্পেশালিস্ট')">
+                    <span>🎸 বিনোদন ও ডিজে স্পেশালিস্ট</span>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
+                </div>
+                <div class="select-card duty-card" onclick="selectDuty('😎 কোনো কাজ নাই, শুধু চিল')">
+                    <span>😎 কোনো কাজ নাই, শুধু চিল</span>
+                    <div class="radio-circle"><div class="circle-dot"></div></div>
+                </div>
             </div>
 
             <!-- নাম ও সাবমিট বাটন -->
@@ -611,12 +615,12 @@
                     👤 <strong>নাম:</strong> <span id="ticketName">-</span><br>
                     📍 <strong>পছন্দের স্পট:</strong> <span id="ticketPlace">-</span><br>
                     📅 <strong>সিলেক্ট করা তারিখ:</strong> <span id="ticketDates">-</span><br>
-                    🎖️ <strong>ট্যুরের দায়িত্ব:</strong> <span id="ticketRole" style="color: #34d399;">-</span>
+                    🎖️ <strong>ট্যুরের দায়িত্ব:</strong> <span id="ticketDuty" style="color: #34d399;">-</span>
                 </div>
             </div>
         </div>
 
-        <!-- 📊 ৪. লাইভ ফলাফল ও ভোটারদের তালিকা -->
+        <!-- 📊 ৪. লাইভ ফলাফল (বিস্তারিত তালিকা ও স্ট্যাটাস) -->
         <div class="glass-card">
             <div class="section-header">
                 <i class="fa-solid fa-chart-pie text-emerald-400"></i>
@@ -624,16 +628,14 @@
             </div>
 
             <!-- স্পট ভিত্তিক লাইভ স্ট্যাটাস বার -->
-            <div class="stat-bar-container" id="statBarContainer">
-                <!-- ডায়নামিক প্রোগ্রেস বার আসবে -->
-            </div>
+            <div class="stat-bar-container" id="statBarContainer"></div>
 
-            <div style="font-size: 12px; color: #94a3b8; margin: 14px 0 8px 0; font-weight: 700; text-transform: uppercase;">
-                📋 বন্ধুদের ভোটের তালিকা:
+            <div style="font-size: 13px; color: #cbd5e1; margin: 16px 0 10px 0; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-users text-indigo-400"></i> বন্ধুদের ভোটের বিস্তারিত তালিকা:
             </div>
             
             <div id="votersListContainer">
-                <!-- ভোটারদের আসল কার্ডগুলো শো করবে -->
+                <!-- বিস্তারিত কার্ডগুলো এখানে শো করবে -->
             </div>
         </div>
 
@@ -660,7 +662,7 @@
         <div class="glass-card">
             <div class="section-header">
                 <i class="fa-solid fa-share-nodes text-cyan-400"></i>
-                <span>৬. বন্ধুদের মেসেঞ্জারে পাঠা (যেন কেউ না পালায়)</span>
+                <span>৬. বন্ধুদের মেসেঞ্জারে পাঠা (যেন কেউ মিস না করে)</span>
             </div>
 
             <div class="share-grid">
@@ -716,9 +718,10 @@
         const selectedDaysText = document.getElementById('selectedDaysText');
         let selectedDates = [];
 
-        const emptyCells = 2; // Dec 1, 2026 starts on Tuesday
+        // ১ ডিসেম্বর ২০২৬ মঙ্গলবার (Tuesday = index 2 -> 2 empty cells)
+        const emptyCells = 2;
         const totalMonthDays = 31;
-        const holidayDates = [16, 25];
+        const holidayDates = [16, 25]; // ১৬ বিজয় দিবস, ২৫ বড়দিন
 
         for (let i = 0; i < emptyCells; i++) {
             const empty = document.createElement('div');
@@ -754,7 +757,7 @@
         let chosenPlace = '';
         function selectPlace(placeName) {
             chosenPlace = placeName;
-            document.querySelectorAll('.place-item').forEach(el => {
+            document.querySelectorAll('.place-card').forEach(el => {
                 el.classList.remove('active');
                 if (el.innerText.includes(placeName)) {
                     el.classList.add('active');
@@ -763,19 +766,19 @@
         }
 
         // ৩. দায়িত্ব নির্বাচন
-        let chosenRole = '😎 শুধু চিল';
-        function selectRole(roleName) {
-            chosenRole = roleName;
-            document.querySelectorAll('.role-chip').forEach(el => {
+        let chosenDuty = '';
+        function selectDuty(dutyName) {
+            chosenDuty = dutyName;
+            document.querySelectorAll('.duty-card').forEach(el => {
                 el.classList.remove('active');
-                if (el.innerText === roleName) {
+                if (el.innerText.includes(dutyName)) {
                     el.classList.add('active');
                 }
             });
         }
 
         // ৪. ফলাফল ও ভোট হ্যান্ডলার
-        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_v3')) || [];
+        let votersData = JSON.parse(localStorage.getItem('bachelor_tour_v4_detailed')) || [];
 
         function renderResults() {
             // প্রোগ্রেস বার তৈরি
@@ -807,7 +810,7 @@
                 `;
             });
 
-            // ভোটারদের কার্ড রেন্ডার
+            // বিস্তারিত ভোটারদের তালিকা রেন্ডার
             const container = document.getElementById('votersListContainer');
             container.innerHTML = '';
             
@@ -822,15 +825,17 @@
 
             votersData.forEach(v => {
                 container.innerHTML += `
-                    <div class="voter-card">
-                        <div>
-                            <div class="voter-name">
-                                ${v.name} 
-                                <span class="role-badge">${v.role}</span>
+                    <div class="detailed-voter-card">
+                        <div class="voter-top-row">
+                            <div class="voter-name-bold">
+                                <i class="fa-solid fa-user-check text-indigo-400"></i> ${v.name}
                             </div>
-                            <div class="voter-details"><i class="fa-regular fa-calendar-check text-indigo-400"></i> ${v.dates}</div>
+                            <div class="duty-badge-tag">${v.duty}</div>
                         </div>
-                        <div class="voter-tag">${v.place}</div>
+                        <div class="voter-meta-row">
+                            <div><i class="fa-solid fa-location-dot text-pink-400"></i> স্থান: <strong>${v.place}</strong></div>
+                            <div><i class="fa-regular fa-calendar-check text-emerald-400"></i> তারিখ: <strong>${v.dates}</strong></div>
+                        </div>
                     </div>
                 `;
             });
@@ -840,35 +845,39 @@
             const nameInput = document.getElementById('voterName');
             const name = nameInput.value.trim();
 
-            if (!name) {
-                alert("আরে মামা, তোর নাম তো লিখবি আগে!");
+            if (selectedDates.length === 0) {
+                alert("ক্যালেন্ডার থেকে অন্তত একটা দিন সিলেক্ট কর!");
                 return;
             }
             if (!chosenPlace) {
                 alert("কোথায় যেতে চাস, একটা জায়গা বেছে নে!");
                 return;
             }
-            if (selectedDates.length === 0) {
-                alert("ক্যালেন্ডার থেকে অন্তত একটা দিন তো সিলেক্ট করবি!");
+            if (!chosenDuty) {
+                alert("ট্যুরের একটা দায়িত্ব তো বেছে নিবি মামা!");
+                return;
+            }
+            if (!name) {
+                alert("আরে বন্ধু, তোর নাম তো লিখবি আগে!");
                 return;
             }
 
-            const formattedDates = selectedDates.map(d => toBanglaNum(d)).join(', ') + " ডিসেম্বর";
+            const formattedDates = selectedDates.map(d => toBanglaNum(d)).join(', ') + " ডিসেম্বর (" + toBanglaNum(selectedDates.length) + " দিন)";
 
             votersData.unshift({
                 name: name,
                 place: chosenPlace,
-                dates: formattedDates,
-                role: chosenRole
+                duty: chosenDuty,
+                dates: formattedDates
             });
 
-            localStorage.setItem('bachelor_tour_v3', JSON.stringify(votersData));
+            localStorage.setItem('bachelor_tour_v4_detailed', JSON.stringify(votersData));
 
             // টিকেট আপডেট
             document.getElementById('ticketName').innerText = name;
             document.getElementById('ticketPlace').innerText = chosenPlace;
+            document.getElementById('ticketDuty').innerText = chosenDuty;
             document.getElementById('ticketDates').innerText = formattedDates;
-            document.getElementById('ticketRole').innerText = chosenRole;
             document.getElementById('ticketView').style.display = 'block';
 
             renderResults();
@@ -974,7 +983,7 @@
             });
         }
 
-        // ৭. লাইভ কাউন্টডাউন টাইমার (ডিসেম্বর ১, ২০২৬ পর্যন্ত)
+        // ৭. লাইভ কাউন্টডাউন টাইমার (ডিসেম্বর ১, ২০২৬)
         function updateCountdown() {
             const targetDate = new Date("December 1, 2026 00:00:00").getTime();
             const now = new Date().getTime();
